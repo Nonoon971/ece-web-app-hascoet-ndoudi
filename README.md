@@ -1,6 +1,10 @@
 # Notre projet WebTech
 
+## Présentation
 
+## Utilisation
+
+## Usage
 
 ## Etat actuel du projet
 1. Démarrage du projet par la **création de son dossier** et **l'initialisation du dépot GIT**
