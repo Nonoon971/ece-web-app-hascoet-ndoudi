@@ -14,7 +14,7 @@
 3. Exécution d'un code de création d'un serveur HTTP avec en parallèle la documentation http officielle du module Node.js
     -  Compréhension de chaque sous-partie suite aux modification du fichier index.js et la création du fichier handles.js
 
-4. **En cours de réussite** 
+4. **En cours de réussite**
 
 
 ## Contributeurs
