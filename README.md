@@ -19,8 +19,8 @@ Ensuite, en vous rendant sur le lien [localhost:8080/articles](localhost:8080/ar
 
 ## Etat actuel du projet
 - [x] Création de la base de donnée
-- [] Création des routes pour gérer les articles
-- [] Création des routes pour gérer les commentaires
+- [ ] Création des routes pour gérer les articles
+- [ ] Création des routes pour gérer les commentaires
 
 
 ## Contributeurs
