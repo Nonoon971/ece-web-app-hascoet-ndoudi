@@ -1,20 +1,26 @@
 # Notre projet WebTech
 
 ## Présentation
+Notre projet a pour but de créer une application API web avec le module Express
+
+### Pré-requis
+Vous aurez besoin de d'installer les packages node. Utilisez la commande suivante: ```npm install```
+
+Et utilisez la commande: ``npm install express`` afin d'installer Express
+
+[Suivez le tutoriel d'express.js ici](http://expressjs.com/en/starter/installing.html) pour mieux comprendre son utilisation
+
 
 ## Utilisation
+Lancer le fichier index.js avec la commande : ``npm start``
 
-## Usage
+
+Ensuite, en vous rendant sur le lien [localhost:8080/articles](localhost:8080/articles) afin de lister les articles de la base de donnée
 
 ## Etat actuel du projet
-1. Démarrage du projet par la **création de son dossier** et **l'initialisation du dépot GIT**
-
-2. Création d'un **script Node.js** avec VS Code
-
-3. Exécution d'un code de création d'un serveur HTTP avec en parallèle la documentation http officielle du module Node.js
-    -  Compréhension de chaque sous-partie suite aux modification du fichier index.js et la création du fichier handles.js
-
-4. **En cours de réussite**
+- [x] Création de la base de donnée
+- [] Création des routes pour gérer les articles
+- [] Création des routes pour gérer les commentaires
 
 
 ## Contributeurs
