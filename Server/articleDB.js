@@ -33,9 +33,41 @@ router.get('/articles',(req,res) => {
     }
 })
 
-
+//Ajout article
 router.post('/articles',(req,res) => {
+  let article =
+  {
+    id: req.query.id,
+    title: req.query.title,
+    content: req.query.content,
+    date: req.query.date,
+    author: req.query.author
+  }
 
+  if(article.id === undefined && article.title === undefined && article.content === undefined && article.date === undefined && article.author === undefined)
+  {
+    console.log("Element d'article non défini, ajout non effectué")
+  }
+  else
+  {
+    db.articles.push(article)
+  }
+
+})
+
+//Récupérer un article par son ID
+router.get('/articles/:articleId', (req,res) => {
+  const searchID = req.params.articleId;
+  const article = db.articles.find( article => article.id === searchId)
+
+  if(article === undefined)
+  {
+    res.send("L'article n'existe pas")
+  }
+  else
+  {
+    res.send(db.articles[article])
+  }
 })
 
 
