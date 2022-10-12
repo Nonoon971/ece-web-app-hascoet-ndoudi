@@ -1,13 +1,17 @@
 const express = require('express')
+const router = express.Router()
 const path = require('path')
-const app = express()
-const port = 8080
 
-app.get('/', (req, res) => {
+router.use((req, res, next) => {
+  console.log('Time: ', Date.now())
+  next()
+})
+
+router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/html/root.html'))
 })
 
-app.get('/hello', (req, res) => {
+router.get('/hello', (req, res) => {
   const name = req.query.name;
   switch(name){
     case "Norine":
@@ -25,6 +29,4 @@ app.get('/hello', (req, res) => {
   }
 })
 
-app.listen(port, () => {
-  console.log(`App test pour voir on port ${port}`)
-})
+module.exports=router
