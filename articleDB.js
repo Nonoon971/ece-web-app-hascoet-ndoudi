@@ -1,4 +1,6 @@
-const { application } = require("express")
+const express = require('express')
+const router = express.Router()
+
 
 let db = {
     articles: [
@@ -23,13 +25,19 @@ let db = {
     ]
   }
 
-app.get('/articles',(req,res) => {
+//Liste de tout les articles
+router.get('/articles',(req,res) => {
     for(const element of db.articles)
     {
         res.send(element)
     }
 })
 
-app.post('/articles',(req,res) => {
+
+router.post('/articles',(req,res) => {
 
 })
+
+
+
+module.exports=router
