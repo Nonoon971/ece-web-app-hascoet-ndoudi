@@ -15,18 +15,20 @@ Et utilisez la commande: ``npm install express`` afin d'installer les packages E
 
 
 ## Utilisation
-Lancer le fichier index.js avec la commande : ``npm start``
+Aller sur la partie www du dossier
 
-.
-.
-.
+Lancer le server avec la commande : ``npm run dev``
 
-Ensuite, en vous rendant sur le lien [localhost:8080/articleDB/articles](localhost:8080/articles) afin de lister les articles de la base de donnée
+Ensuite, en vous rendant sur le lien [localhost:3000](localhost:3000) vous entrerez sur la page d'accueil
+
+Rendez-vous sur d'autre page grâce au lien sur la page d'accueil
 
 ## Etat actuel du projet
 - [x] Création de la base de donnée
 - [x] Création des routes pour gérer les articles (partiellement)
-- [ ] Création des routes pour gérer les commentaires
+- [x] Création des routes pour gérer les commentaires
+- [x] Création du squelette du site web pour un blog
+- [ ] Création de route dynamique
 
 ## Langage utilisé
 - JavaScript
