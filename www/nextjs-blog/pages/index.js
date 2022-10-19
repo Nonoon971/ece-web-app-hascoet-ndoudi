@@ -1,15 +1,4 @@
-import Head from 'next/head'
-import Layout from '../components/layout';
-import { getSortedPostsData } from '../lib/posts';
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+import Head from 'next/head';
 
 export default function Home({ allPostsData }) {
   return (
@@ -40,7 +29,7 @@ export default function Home({ allPostsData }) {
           </a>
 
           <a
-            href="/articles" className="card">
+            href="/posts" className="card">
             <h3>Articles &rarr;</h3>
             <p>Discover our articles.</p>
           </a>
