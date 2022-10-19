@@ -17,9 +17,9 @@ Et utilisez la commande: ``npm install express`` afin d'installer les packages E
 ## Utilisation
 Aller sur la partie www du dossier
 
-Lancer le server avec la commande : ``npm run dev``
+Lancer le server avec la commande : npm run dev
 
-Ensuite, en vous rendant sur le lien [localhost:3000](localhost:3000) vous entrerez sur la page d'accueil
+Ensuite, en vous rendant sur le lien [localhost:3000](https//:localhost:3000) vous entrerez sur la page d'accueil
 
 Rendez-vous sur d'autre page grâce au lien sur la page d'accueil
 
