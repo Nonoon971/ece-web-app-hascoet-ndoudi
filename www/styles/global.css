@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.wt-title {
+    @apply  text-3xl text-cyan-600 font-bold underline mb-10;
+  }

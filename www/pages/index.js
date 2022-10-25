@@ -9,7 +9,7 @@ export default function Home({ allPostsData }) {
       </Head>
 
       <main>
-      <h1 className="text-blue-600 text-3xl font-bold underline">
+      <h1 className="wt-title">
       Hello world!
     </h1>
 

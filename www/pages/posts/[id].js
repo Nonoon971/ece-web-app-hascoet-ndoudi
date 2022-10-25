@@ -11,10 +11,11 @@ function Details(){
   return(
     <div>
       <h1>Détails de l'article {article.id}</h1>
-      <p>Titre: {article.title}</p>
-      <p>Content: {article.date}</p>
-      <p>Auteur: {article.author}</p>
-      <p></p>
+      <p className='italic font-bold hover:text-red-800'>
+        Titre: {article.title}<br/>
+        Content: {article.date}<br/>
+        Auteur: {article.author}<br/>
+      </p>
     </div>
   )
 }
