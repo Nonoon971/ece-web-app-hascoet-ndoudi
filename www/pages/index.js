@@ -9,9 +9,9 @@ export default function Home({ allPostsData }) {
       </Head>
 
       <main>
-        <h1 className="title">
-          Bienvenue sur notre projet
-        </h1>
+      <h1 className="text-blue-600 text-3xl font-bold underline">
+      Hello world!
+    </h1>
 
         <p className="description">
           Démarer par accéder a notre page <strong>About</strong>
