@@ -19,7 +19,7 @@ export default function Contacts() {
       <p>
         Un problème, une question ? Utilisez ce formulaire pour prendre contact avec nous !
       </p><br/>
-      <form>
+      <form className='border-orange-500 border-solid border-2 p-4 shadow-xl'>
         <div>
           <label for="nom">Votre nom :</label>
           <input type="text" id="nom" className='rounded-lg border block p-2'></input>

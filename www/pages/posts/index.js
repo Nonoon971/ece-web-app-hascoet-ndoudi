@@ -3,19 +3,30 @@ import Head from 'next/head';
 import Layout from '../../components/layout';
 import db from './db';
 
+
+
 export default function Articles() {
-  const article = db.articles[0].id
-  console.log(article)
+  
 
   return (
     <Layout>
       <Head>
       <title>Articles</title>
       </Head>
+      <div id='art'>
       <h1>
         Tous les articles
       </h1>
-      <Link href={`/posts/${article}`}>Article 1</Link>
+      <ul>
+        {db.articles.map(article => (
+          <li key={article.id}>
+              <Link href={`/posts/${article.id}`}>{article.title}</Link>
+
+          </li>
+        ))}
+      </ul>
+
+      </div>
       <h3>
         <Link href="/">Retour page d'accueil</Link>
       </h3>

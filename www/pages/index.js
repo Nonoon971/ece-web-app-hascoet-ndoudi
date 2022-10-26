@@ -22,7 +22,7 @@ export default function Home({ allPostsData }) {
 
         <div className="grid mt-7">
           <div id="carre1" className='flex gap-10  m-auto mb-5'>
-            <a href="/about" className="w-80 shadow-2xl rounded-md h-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-center font-bold hover:text-white">
+            <a href="/about" className="w-80 shadow-2xl m-auto rounded-md h-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-center font-bold hover:text-white">
               <h3>About &rarr;</h3>
               <p>Find in-depth information about the project.</p>
             </a>
@@ -35,7 +35,7 @@ export default function Home({ allPostsData }) {
 
           <div id="carre2" className='flex gap-10  m-auto mb-14'>
             <a
-              href="/posts" className="w-80 rounded-md h-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-center font-bold hover:text-white">
+              href="/posts" className="w-80 m-auto rounded-md h-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-center font-bold hover:text-white">
               <h3>Articles &rarr;</h3>
               <p>Discover our articles.</p>
             </a>
