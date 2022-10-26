@@ -3,10 +3,7 @@ import Head from 'next/head';
 import Layout from '../../components/layout';
 import db from './db';
 
-
-
 export default function Articles() {
-  
 
   return (
     <Layout>
@@ -25,7 +22,6 @@ export default function Articles() {
           </li>
         ))}
       </ul>
-
       </div>
       <h3>
         <Link href="/">Retour page d'accueil</Link>
