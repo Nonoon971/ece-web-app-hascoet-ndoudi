@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import Layout from '../../components/layout';
-import db from './db';
+import db from "../../content/db";
 
-export default function Articles() {
-
+export default function Articles(props) {
+  const art = props.posts;
   return (
     <Layout>
       <Head>
@@ -15,7 +15,7 @@ export default function Articles() {
         Tous les articles
       </h1>
       <ul>
-        {db.articles.map(article => (
+        {art.map(article => (
           <li key={article.id}>
               <Link href={`/posts/${article.id}`}>{article.title}</Link>
 
@@ -29,5 +29,16 @@ export default function Articles() {
     </Layout>
   );
 }
+
+export async function getStaticProps() {
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      posts: db.posts
+    },
+  }
+}
+
 
 

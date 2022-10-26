@@ -1,11 +1,16 @@
 import db from "../../content/db";
+import { Navbar } from '../../components/navbar';
+import { Footer } from '../../components/footer';
+//import Layout from '../components/layout';
 
 export default function Post(props) {
-  // const {post} = props
+
   const article = props.post;
 
   return (
     <div>
+    <Navbar/>
+    <div className="text-center">
       <h1>Détails de l'article {article.id}</h1>
       <p className="italic font-bold hover:text-red-800">
         Titre: {article.title}
@@ -15,6 +20,8 @@ export default function Post(props) {
         Auteur: {article.author}
         <br />
       </p>
+    </div>
+    <Footer/>
     </div>
   );
 }
