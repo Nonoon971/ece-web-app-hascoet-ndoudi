@@ -14,16 +14,7 @@ const db = {
       date: "04/02/2002",
       author: "Camille Hascoët",
     },
-  ],
-  comments: [
-    {
-      id: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
-      timestamp: 1664835049,
-      content: "Content of the comment.",
-      articleId: "6ec0bd7f-11c0-43da-975e-2a8ad9ebae0b",
-      author: "Bob McLaren",
-    },
-  ],
+  ]
 };
 
 export default db;
