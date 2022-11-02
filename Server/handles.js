@@ -29,4 +29,20 @@ router.get('/hello', (req, res) => {
   }
 })
 
+//Reading from a JSON file
+router.get('/about',(req,res)=> {
+
+  try
+  {
+    const about = require('./content/about.json')
+    res.send(about)
+  }
+  catch
+  {
+    res.send("ERREUR 404")
+  }
+  res.writeHead(200, {'Content-Type': 'application/json'});
+
+})
+
 module.exports = router
