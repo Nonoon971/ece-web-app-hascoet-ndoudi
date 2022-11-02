@@ -6,11 +6,11 @@ export default function Home({ allPostsData }) {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Bienvenue</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-
+    
       <main>
         <h1 className="wt-title text-center">
           Bienvenue sur notre projet !

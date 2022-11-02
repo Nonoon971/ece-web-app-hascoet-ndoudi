@@ -1,6 +1,6 @@
 export const  Navbar = () => {
   return (
-    <nav className='bg-blue-500 text-center m-0 p-5 text-lg mb-5'>
+    <nav className='bg-blue-500 text-center p-5 w-full text-lg mb-5'>
 
           <a href="/about" className="inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">About</a>
 

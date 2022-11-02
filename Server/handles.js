@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/hello', (req, res) => {
-  const name = req.query.name;
+  const name = req.query.name
   switch(name){
     case "Norine":
       res.sendFile(path.join(__dirname, '/html/nom1.html'))
@@ -29,4 +29,4 @@ router.get('/hello', (req, res) => {
   }
 })
 
-module.exports=router
+module.exports = router
