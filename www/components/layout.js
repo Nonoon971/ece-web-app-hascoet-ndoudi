@@ -1,3 +1,12 @@
+import { Navbar } from "./navbar"
+import { Footer } from "./footer"
+
 export default function Layout({ children }) {
-  return <div className="bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">{children}</div>;
+  return (
+  <>
+  <Navbar />
+  <div>{children}</div>
+  <Footer />
+  </>
+  )
 }

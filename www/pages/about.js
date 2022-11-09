@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import { Footer } from '../components/footer';
-import { Navbar } from '../components/navbar';
 import Layout from '../components/layout';
 
 export default function About() {
@@ -10,8 +8,8 @@ export default function About() {
       <Head>
         <title>About</title>
       </Head>
-      <Navbar />
       <Layout>
+      <div className="bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
         <h1 className='wt-title '>Qui sont les contributeurs ?</h1>
         <ul>
           <li className='mb-4 ml-4'>
@@ -42,8 +40,8 @@ export default function About() {
         <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
           <Link href="/">Retour page d'accueil</Link>
         </button>
+        </div>
       </Layout>
-      <Footer/>
     </div>
 
   );

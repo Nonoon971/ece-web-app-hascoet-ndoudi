@@ -1,7 +1,4 @@
-import Link from 'next/link';
 import Head from 'next/head';
-import { Navbar } from '../components/navbar';
-import { Footer } from '../components/footer';
 
 
 import Layout from '../components/layout';
@@ -12,9 +9,8 @@ export default function Contacts() {
       <Head>
         <title>Contacts</title>
       </Head>
-      <Navbar />
     <Layout>
-
+    <div className="bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
       <h1 className='wt-title'>Contactez-nous</h1>
       <p>
         Un problème, une question ? Utilisez ce formulaire pour prendre contact avec nous !
@@ -42,8 +38,8 @@ export default function Contacts() {
         </button>
         </div>
       </form>
+    </div>
     </Layout>
-    <Footer/>
     </div>
   );
 }
