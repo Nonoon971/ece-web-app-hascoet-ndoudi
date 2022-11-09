@@ -1,17 +1,15 @@
 import Head from 'next/head';
-import { Navbar } from '../components/navbar';
-import { Footer } from '../components/footer';
+import Layout from '../components/layout';
 
 export default function Home({ allPostsData }) {
   return (
-    <div className="container">
+    <div>
       <Head>
         <title>Bienvenue</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-    
-      <main>
+
+      <Layout>
         <h1 className="wt-title text-center">
           Bienvenue sur notre projet !
         </h1>
@@ -51,9 +49,7 @@ export default function Home({ allPostsData }) {
             </a>
           </div>
         </div>
-      </main>
-
-      <Footer/>
+      </Layout>
 
     </div>
   );

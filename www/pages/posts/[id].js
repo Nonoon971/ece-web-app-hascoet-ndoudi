@@ -1,7 +1,5 @@
 import db from "../../content/db";
-import { Navbar } from '../../components/navbar';
-import { Footer } from '../../components/footer';
-//import Layout from '../components/layout';
+import Layout from "../../components/layout";
 
 export default function Post(props) {
 
@@ -9,19 +7,19 @@ export default function Post(props) {
 
   return (
     <div>
-    <Navbar/>
-    <div className="text-center">
-      <h1>Détails de l'article {article.id}</h1>
-      <p className="italic font-bold hover:text-red-800">
-        Titre: {article.title}
-        <br />
-        Content: {article.date}
-        <br />
-        Auteur: {article.author}
-        <br />
-      </p>
-    </div>
-    <Footer/>
+      <Layout>
+        <div className="text-center bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
+          <h1>Détails de l'article {article.id}</h1>
+          <p className="italic font-bold hover:text-red-800">
+            Titre: {article.title}
+            <br />
+            Content: {article.date}
+            <br />
+            Auteur: {article.author}
+            <br />
+          </p>
+        </div>
+      </Layout>
     </div>
   );
 }
