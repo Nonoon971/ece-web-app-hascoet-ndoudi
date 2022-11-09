@@ -4,7 +4,7 @@ import { Footer } from '../components/footer';
 
 export default function Home({ allPostsData }) {
   return (
-    <div className="container">
+    <div>
       <Head>
         <title>Bienvenue</title>
         <link rel="icon" href="/favicon.ico" />
