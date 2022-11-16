@@ -14,7 +14,8 @@ export const  Navbar = () => {
             className="inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white"
           >Deploy</a>
 
-          <a href="/login" className="inline-flex shadow-lg float-right lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-800 hover:text-white">Login</a>
+          <a href="/login-controlled" className="inline-flex shadow-lg float-right lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-800 hover:text-white">Login</a>
+
       </nav>
   );
 }

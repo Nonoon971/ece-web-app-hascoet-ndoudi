@@ -29,7 +29,7 @@ export default function Contacts() {
         </div><br/>
         <div>
           <label for="mdp">Votre mot de passe :</label>
-          <input type="text" name="password" className='rounded-lg border block p-2' value={data.password} onChange={e => setData({...data, ...{password: e.target.value}})}></input>
+          <input type="text" name="password" className='rounded-lg border block p-2' value={data.valPassword} onChange={e => setData({...data, ...{password: e.target.value}})}></input>
         </div><br/>
         <p>
             {username}
