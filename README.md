@@ -17,18 +17,16 @@ Et utilisez la commande: ``npm install express`` afin d'installer les packages E
 ## Utilisation
 Aller sur la partie www du dossier
 
-Lancer le server avec la commande : npm run dev
+Lancer le server avec les commande : ``npm run build`` puis ``npm run start``
 
 Ensuite, en vous rendant sur le lien [localhost:3000](https//:localhost:3000) vous entrerez sur la page d'accueil
 
-Rendez-vous sur d'autre page grâce au lien sur la page d'accueil
+Rendez-vous sur d'autre page grâce au lien dans la navbar
 
 ## Etat actuel du projet
-- [x] Création de la base de donnée
-- [x] Création des routes pour gérer les articles (partiellement)
-- [x] Création des routes pour gérer les commentaires
-- [x] Création du squelette du site web pour un blog
-- [ ] Création de route dynamique
+- [x] Création de route dynamique
+- [x] Création du formulaire de connexion native et controlled
+- [ ] Création du components/UserContext
 
 ## Langage utilisé
 - JavaScript
