@@ -3,9 +3,7 @@ import Layout from '../components/layout';
 import React, { useState } from "react";
 
 export default function Contacts() {
-    
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+  
     const [data, setData] = useState("");
     
     const useSubmit = (e) => {
