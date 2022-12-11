@@ -26,15 +26,15 @@ export default function Home({ allPostsData }) {
                 <h3>About &rarr;</h3>
                 <p>Find in-depth information about the project.</p>
               </a>
-              
+
             </Link>
 
-            <Link href="/contacts">
+            <Link href="/admin/contact">
               <a className="w-80 shadow-2xl rounded-md h-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-center font-bold hover:text-white">
                 <h3>Contacts &rarr;</h3>
                 <p>Something to tell us?</p>
               </a>
-              
+
             </Link>
           </div>
 
