@@ -1,6 +1,7 @@
 import {useContext} from 'react';
 import Context from './UserContext';
 import Link from 'next/link';
+import Login from './Login'
 
 const LogOut = () => {
     const {login} = useContext(Context)
@@ -49,9 +50,7 @@ export const  Navbar = () => {
             <a className="inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">Deploy</a>
         </Link>
 
-          <div className="inline-flex shadow-lg float-right lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-800 hover:text-white">
-            {user ? <LogIn />: <LogOut />}
-          </div>
+        <a className="inline-flex shadow-lg float-right lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white"><Login /></a>
 
       </nav>
   );
