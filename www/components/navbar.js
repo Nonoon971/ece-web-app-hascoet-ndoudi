@@ -1,6 +1,9 @@
 import {useContext} from 'react';
 import Context from './UserContext';
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '../images/accueil.png'
+
 
 const LogOut = () => {
     const {login} = useContext(Context)
@@ -26,32 +29,42 @@ const LogIn = () => {
 export const  Navbar = () => {
     const {user} = useContext(Context)
   return (
-    <nav className='bg-blue-500 text-center p-5 w-full text-lg mb-5'>
+    <nav className='bg-orange-500 text-center p-5 w-full text-lg mb-5'>
 
-        <Link href="/">
-            <a className="inline-flex shadow-lg float-left lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-red-800 hover:text-white">Accueil</a>
-        </Link>
-
+          <Link href="/">
+              <a className="float-left lg:w-auto items-center justify-center">
+                  <Image
+                      src={logo}
+                      alt="Picture of the logo"
+                      width={(50)}
+                      height={50}
+                  />
+              </a>
+          </Link>
+        
         <Link href="/about">
-            <a className="inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">About</a>
+            <a className="bg-black inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">About</a>
         </Link>
 
         <Link href="/contacts"> 
-            <a className="inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">Contacts</a>
+            <a className=" bg-black inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">Contacts</a>
         </Link>
 
         <Link href="/posts">
-            <a className="inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">Articles</a>
+            <a className=" bg-black inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">Articles</a>
         </Link>
 
         <Link
             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-            <a className="inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">Deploy</a>
+            <a className="bg-black inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">Deploy</a>
         </Link>
 
-          <div className="inline-flex shadow-lg float-right lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-800 hover:text-white">
+          <div className="bg-black inline-flex shadow-lg float-right lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-800 hover:text-white">
             {user ? <LogIn />: <LogOut />}
           </div>
+          <Link href="/signup">
+            <a className=" bg-black float-right mr-2 inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">Sign up</a>
+        </Link>
 
       </nav>
   );
