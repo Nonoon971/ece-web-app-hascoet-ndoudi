@@ -46,9 +46,9 @@ export default function Contacts() {
     <div className="bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
       <h1 className='wt-title'>Contactez-nous</h1>
       <p>
-        Un problème, une question ? Utilisez ce formulaire pour prendre contact avec nous !
+        Un problème, une question ? Utilisez ce formulaire pour nous laissez un message !
       </p><br/>
-      <form className='border-orange-500 border-solid border-2 p-4 shadow-xl' onSubmit={onSubmit}>
+      <form id="createMessage" className='border-orange-500 border-solid border-2 p-4 shadow-xl' onSubmit={onSubmit}>
         <div>
           <label>Votre nom <span className='text-red-700'>*</span> :</label>
           <input type="text" id="nom" className='rounded-lg border block p-2' value={lastname} onChange={(e)=> setLastName(e.target.value)} required ></input>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../images/accueil.png'
 
+import Login from './Login'
 
 const LogOut = () => {
     const {login} = useContext(Context)
@@ -59,9 +60,7 @@ export const  Navbar = () => {
             <a className="bg-black inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">Deploy</a>
         </Link>
 
-          <div className="bg-black inline-flex shadow-lg float-right lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-800 hover:text-white">
-            {user ? <LogIn />: <LogOut />}
-          </div>
+        <a className="bg-black inline-flex shadow-lg float-right lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white"><Login /></a>
           <Link href="/signup">
             <a className=" bg-black float-right mr-2 inline-flex shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-blue-800 hover:text-white">Sign up</a>
         </Link>

@@ -6,7 +6,7 @@ export default function Home({ allPostsData }) {
   return (
     <div>
       <Head>
-        <title>Bienvenue</title>
+        <title>Noca</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

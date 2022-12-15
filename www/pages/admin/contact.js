@@ -48,10 +48,10 @@ export default function Contacts() {
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-slate-500">{contact.lastname}</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-slate-500">{contact.email}</td>
                     <td>
-                    <Link href={`/admin/contacts/${contact.id}`}>
-                        <a className={"w-5 h-5 block bg-slate-200 hover:bg-blue-500 hover:text-white rounded-full"}>
-                          <ChevronRightIcon className="h-5 w-5 " aria-hidden="true" />
-                        </a>
+                      <Link href={`/admin/contacts/${contact.id}`}>
+                          <a className={"w-5 h-5 block bg-slate-200 hover:bg-blue-500 hover:text-white rounded-full"}>
+                            <ChevronRightIcon className="h-5 w-5 " aria-hidden="true" />
+                          </a>
                       </Link>
                     </td>
                   </tr>
