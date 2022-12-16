@@ -5,14 +5,17 @@ import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 
 function MyApp({Component, pageProps}) {
-    const [supabase] = useState(() => createBrowserSupabaseClient())
+    const [supabaseClient] = useState(() => createBrowserSupabaseClient())
 
     return (
-        <ContextProvider>
-            <SessionContextProvider supabaseClient={supabase} initialSession={pageProps.initialSession}>
+        <SessionContextProvider
+            supabaseClient={supabaseClient}
+            initialSession={pageProps.initialSession}
+        >
+            <ContextProvider>
                 <Component {...pageProps} />
-            </SessionContextProvider>
-        </ContextProvider>
+            </ContextProvider>
+        </SessionContextProvider>
     )
 }
 export default MyApp;

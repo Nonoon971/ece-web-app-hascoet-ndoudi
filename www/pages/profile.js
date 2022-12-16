@@ -30,7 +30,6 @@ export default function Contact() {
           >
             Logout
           </button>
-          <pre><code>{JSON.stringify(user, null, 2)}</code></pre>
         </>
       }
     </Layout>
