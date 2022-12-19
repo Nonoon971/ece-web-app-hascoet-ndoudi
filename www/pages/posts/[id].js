@@ -1,5 +1,6 @@
 import db from "../../content/db";
 import Layout from "../../components/layout";
+import Link from 'next/link';
 
 export default function Post(props) {
 
@@ -17,7 +18,10 @@ export default function Post(props) {
             <br />
             Auteur: {article.author}
             <br />
-          </p>
+          </p><br/>
+          <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+              Supprimer cette article
+          </button>
         </div>
       </Layout>
     </div>

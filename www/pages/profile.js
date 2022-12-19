@@ -3,6 +3,7 @@ import { useContext, useEffect } from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout.js'
 import UserContext from '../components/UserContext'
+import Link from 'next/link';
 
 export default function Contact() {
   const { user, logout, loading } = useContext(UserContext)
@@ -20,18 +21,26 @@ export default function Contact() {
       <Head>
         <title>Profile</title>
       </Head>
+      <div>
       { !(user || loading) ?
         <p>Redirecting...</p>
         :
         <>
           <button
-            className="rounded px-3 py-2 text-white bg-slate-500 hover:bg-blue-500"
+            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
             onClick={onClickLogout}
           >
             Logout
           </button>
         </>
-      }
+      }<br/><br/>
+      <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+          <Link href="/modAccount">Modifier le profile</Link>
+      </button><br/><br/>
+      <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+          <Link href="/admin/contact">Mes messages</Link>
+      </button>
+      </div>
     </Layout>
   )
 }

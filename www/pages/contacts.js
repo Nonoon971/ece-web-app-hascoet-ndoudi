@@ -1,10 +1,7 @@
 import Head from 'next/head';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
-
-
 import Layout from '../components/layout';
-import { data } from 'autoprefixer';
 
 export default function Contacts() {
 
@@ -33,8 +30,8 @@ export default function Contacts() {
       console.log("envoyé")
       let info = document.getElementById("info")
       info.innerHTML = "Message envoyé !"
+      console.log(data)
     }
-    console.log(data)
   }
 
   return (

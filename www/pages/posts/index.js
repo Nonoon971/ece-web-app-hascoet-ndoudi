@@ -25,7 +25,7 @@ export default function Articles(props) {
         ))}
       </ul>
       <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
-          <Link href="/">Retour page d'accueil</Link>
+          <Link href="/newArticles">Ajouter un article</Link>
       </button>
       </div>
     </Layout>
