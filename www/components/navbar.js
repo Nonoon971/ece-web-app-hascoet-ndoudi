@@ -29,8 +29,8 @@ const LogIn = () => {
 export const  Navbar = () => {
     const {user} = useContext(Context)
     return (
-        <nav className='bg-orange-500 text-center p-5 w-full text-lg mb-5'>
-    
+        <nav className='bg-orange-500 fixed z-30 text-center p-2 w-full text-lg border-b-2 border-black'>
+
             <Link href="/">
                 <a className="float-left lg:w-auto items-center justify-center">
                     <Image
