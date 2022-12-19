@@ -55,7 +55,7 @@ export default function Article() {
         </div><br/>
         <div>
           <label>Date début carrière <span className='text-red-700'>*</span> :</label>
-          <input type="text" id="debutdate" className='rounded-lg border block p-2' value={date} onChange={(e)=> setDate (e.target.value)} required></input>
+          <input type="number" placeholder="YYYY" id="debutdate" min="1946" max="2022" step="1" className='rounded-lg border block p-2' value={date} onChange={(e)=> setDate (e.target.value)} required></input>
         </div><br/>
         <div>
           <label>Information sur le joueur<span className='text-red-700'>*</span> :</label>
