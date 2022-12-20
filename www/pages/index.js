@@ -14,8 +14,8 @@ export default function Home({ allPostsData }) {
 
       <Layout>
 
-        <div className='bg-orange-500 relative overflow-hidden block border-b-2 border-black'>
-          <div className=' w-96 float-right absolute block right-0'>
+        <div className='bg-orange-500 relative overflow-hidden block border-b-2 border-black w-full'>
+          <div className=' w-96 absolute block right-0'>
             <Image className='w-full h-full'
               src={ombre}
               alt="Picture of the image"
@@ -23,7 +23,7 @@ export default function Home({ allPostsData }) {
               height={864}
             />
           </div>
-          <div className='justify-center flex ' id='accueil'>
+          <div className='justify-center flex  ' id='accueil'>
             <div className=' mx-12 my-0 min-w-0 max-w-6xl w-full block '>
               <div className='flex-row flex w-full'>
                 <div className=' w-96 z-10 flex-col h-full pt-24 pb-24 flex '>
