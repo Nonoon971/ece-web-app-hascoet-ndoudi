@@ -3,7 +3,7 @@ import Layout from '../../../components/layout'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 
 export default function Contacts({id}) {
-    const [contact, setContact] = useState(null)
+  const [contact, setContact] = useState(null)
   const supabase = useSupabaseClient()
   useEffect(() => {
     (async () => {
