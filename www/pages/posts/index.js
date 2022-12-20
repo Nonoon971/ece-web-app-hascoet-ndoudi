@@ -1,9 +1,24 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
+import { useState, useEffect } from 'react'
+import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import Layout from '../../components/layout';
-import db from "../../content/db";
+import { useSupabaseClient } from '@supabase/auth-helpers-react'
 
 export default function Articles(props) {
+    let lien = "https://xxpeqblsyczvsphynbzo.supabase.co/storage/v1/object/public/joueurs/"
+    const [articles, setArticles] = useState([])
+    const supabase = useSupabaseClient()
+    useEffect(() => {
+      (async () => {
+          let { data, error, status } = await supabase
+          .from('articles')
+          .select(`id,title, image`)
+          setArticles(data)
+      })()
+    }, [])
+
   const art = props.posts;
   return (
     <div>
@@ -17,10 +32,15 @@ export default function Articles(props) {
         Tous les articles
       </h1>
       <ul>
-        {art.map(article => (
+        {articles.map(article => (
           <li key={article.id}>
-              <Link href={`/posts/${article.id}`}>{article.title}</Link>
-
+            <img
+              src={lien + article.image}
+              alt="Picture of the player"
+              width={(200)}
+              height={200}
+            />
+            <Link href={`/posts/${article.id}`}>{article.title}</Link>
           </li>
         ))}
       </ul>
@@ -33,6 +53,7 @@ export default function Articles(props) {
   );
 }
 
+/*
 export async function getStaticProps() {
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
@@ -42,6 +63,7 @@ export async function getStaticProps() {
     },
   }
 }
+*/
 
 
 

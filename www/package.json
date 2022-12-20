@@ -11,6 +11,7 @@
     "@supabase/auth-helpers-react": "^0.3.1",
     "@supabase/auth-ui-react": "^0.2.6",
     "@supabase/supabase-js": "^2.2.0",
+    "flowbite": "^1.5.5",
     "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "18.2.0",

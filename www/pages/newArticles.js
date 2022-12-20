@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState } from 'react'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import Layout from '../components/layout';
@@ -6,6 +7,7 @@ import Layout from '../components/layout';
 export default function Article() {
 
   const[title,setTitle]=useState('')
+  const[file,setFile]=useState('')
   const[team,setTeam]=useState('')
   const[date,setDate]=useState('')
   const[content,setContent]=useState('')
@@ -15,19 +17,27 @@ export default function Article() {
   const onSubmit = async function(e){
     e.preventDefault()
     // Insert contact record into the contacts database
+    let image = file?.name
+    const{data2,error2} = await supabase.storage
+        .from('joueurs')
+        .upload(file?.name,file)
 
     const {data,error} = await supabase
         .from('articles')
-        .insert({title,content,date,team})
+        .insert({title,content,date,team,image})
 
     // Print a friendly confirmation message
-    if(error)
+    if((error) || (error2))
     {
       console.log("error")
+      console.log(error)
+      console.log(error2)
     }
     else
     {
       console.log("envoyé")
+      console.log(data)
+      console.log(data2)
       let info = document.getElementById("info")
       info.innerHTML = "article envoyé !"
     }
@@ -63,14 +73,18 @@ export default function Article() {
         </div><br/>
         <div>
           <label>Photo du joueur</label><br/>
-          <input id="photo" className='rounded-lg border block p-2'></input>
+          <input type='file' accept='image/' id="photo" onChange={(e)=> setFile(e.target.files[0])} className='block w-auto text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400'></input>
         </div><br/>
         <div>
         <button type='submit' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
           Envoyer
         </button>
+        <button className='bg-red-500 hover:bg-red-700 text-white ml-2 font-bold py-2 px-4 rounded'>
+          <Link href='/posts'>Annuler</Link>
+      </button>
         </div>
       </form>
+      
       <span id="info"></span>
     </div>
     </Layout>

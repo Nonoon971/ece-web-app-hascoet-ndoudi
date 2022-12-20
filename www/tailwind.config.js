@@ -17,6 +17,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('tailwindcss-font-inter')
+    require('tailwindcss-font-inter'),
+    require("flowbite/plugin")
   ]
 }
