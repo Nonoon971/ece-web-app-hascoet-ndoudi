@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Layout from '../../../components/layout'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
+import Link from 'next/link'
 
 export default function Contacts({id}) {
   const [contact, setContact] = useState(null)
@@ -20,6 +21,9 @@ export default function Contacts({id}) {
       <h1 className='wt-title'>
         View a contact message
       </h1>
+      <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-left'>
+        <Link href={'/admin/contact'}>Retour</Link>
+      </button><br/><br/><br/>
       {contact && (
         <div className="overflow-hidden divide-y divide-slate-200 shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
           <div className="bg-slate-50">

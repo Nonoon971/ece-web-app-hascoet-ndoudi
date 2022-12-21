@@ -3,6 +3,7 @@ import UserContext from '../../components/UserContext'
 import Layout from '../../components/layout'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 
 export default function Article({id}) {
@@ -27,7 +28,7 @@ export default function Article({id}) {
     let createur = document.getElementById("createur")
     if(article[0].user_id == user.id)
     {
-      createur.innerHTML = "Supprimer l'article !"
+      createur.innerHTML = "Supprimer l'article"
       createur.className = 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right'
     }
   }
@@ -60,6 +61,9 @@ export default function Article({id}) {
       <Layout>
         <div className="text-center bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
           <h1>Détails du joueur</h1>
+          <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-left'>
+            <Link href={'/posts'}>Retour</Link>
+          </button>
           <button id='createur' onClick={suppression}>
           </button>
           {article && (
