@@ -13,7 +13,7 @@ export default function Article() {
   const[date,setDate]=useState('')
   const[content,setContent]=useState('')
   const { user } = useContext(UserContext)
-  let userid = user.id
+  let user_id = user.id
 
   const supabase = useSupabaseClient()
 
@@ -27,7 +27,7 @@ export default function Article() {
 
     const {data,error} = await supabase
         .from('articles')
-        .insert({title,content,date,team,image,userid})
+        .insert({title,content,date,team,image,user_id})
 
     // Print a friendly confirmation message
     if((error) || (error2))
