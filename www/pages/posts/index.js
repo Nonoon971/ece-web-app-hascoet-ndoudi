@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import { useContext } from 'react'
+import UserContext from '../../components/UserContext'
 import Image from 'next/image';
 import { useState, useEffect } from 'react'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
@@ -8,6 +10,7 @@ import { useSupabaseClient } from '@supabase/auth-helpers-react'
 
 export default function Articles(props) {
     let lien = "https://xxpeqblsyczvsphynbzo.supabase.co/storage/v1/object/public/joueurs/"
+    const { user } = useContext(UserContext)
     const [articles, setArticles] = useState([])
     const supabase = useSupabaseClient()
     useEffect(() => {
@@ -43,9 +46,10 @@ export default function Articles(props) {
             </li>
           ))}
         </ul>
-        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+        {user && (<button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
             <Link href="/newArticles">Ajouter un article</Link>
         </button>
+        )}
         </div>
       </Layout>
     </div>
