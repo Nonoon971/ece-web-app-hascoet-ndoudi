@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import UserContext from '../components/UserContext'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import Layout from '../components/layout';
 
@@ -11,6 +12,8 @@ export default function Article() {
   const[team,setTeam]=useState('')
   const[date,setDate]=useState('')
   const[content,setContent]=useState('')
+  const { user } = useContext(UserContext)
+  let userid = user.id
 
   const supabase = useSupabaseClient()
 
@@ -24,7 +27,7 @@ export default function Article() {
 
     const {data,error} = await supabase
         .from('articles')
-        .insert({title,content,date,team,image})
+        .insert({title,content,date,team,image,userid})
 
     // Print a friendly confirmation message
     if((error) || (error2))
