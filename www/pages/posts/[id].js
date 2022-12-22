@@ -4,6 +4,7 @@ import Layout from '../../components/layout'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Head from 'next/head';
 
 
 export default function Article({id}) {
@@ -26,10 +27,13 @@ export default function Article({id}) {
   if(article && user)
   {
     let createur = document.getElementById("createur")
+    let modif = document.getElementById("modificateur")
     if(article[0].user_id == user.id)
     {
       createur.innerHTML = "Supprimer l'article"
       createur.className = 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right'
+
+      modif.className = 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-left'
     }
   }
 
@@ -58,6 +62,9 @@ export default function Article({id}) {
 
   return (
     <div>
+      <Head>
+        <title>Info article</title>
+      </Head>
       <Layout>
         <div className="text-center bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
           <h1>Détails du joueur</h1>
@@ -81,10 +88,12 @@ export default function Article({id}) {
             <br />
             Son équipe: {article[0].team}
             <br />
-
-          </p><br/>
-          </div>
+            </p><br/>
+            </div>
           )}
+          <button id='modificateur'>
+          <Link href={`/posts/modArticle/${id}`}>Modifier</Link>
+          </button><br/><br/>
         </div>
       </Layout>
     </div>
