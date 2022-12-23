@@ -73,9 +73,10 @@ export default function Article({ id }) {
     if (user) {
       let pseudo = user.user_metadata.user_name
       let user_id = user.id
+      let user_email = user.email
       const { data3, error3 } = await supabase
         .from('comments')
-        .insert({ title, content, user_id, pseudo, article_id })
+        .insert({ title, content, user_id, pseudo, article_id, user_email})
 
       // Print a friendly confirmation message
       if (error3) {
@@ -197,10 +198,11 @@ export default function Article({ id }) {
     if (user) {
       let pseudo = user.user_metadata.user_name
       let user_id = user.id
+      let user_email = user.email
       document.get
       const { data5, error5 } = await supabase
         .from('answercomment')
-        .insert({ contenu, user_id, pseudo, comments_id })
+        .insert({ contenu, user_id, pseudo, comments_id, user_email})
 
       // Print a friendly confirmation message
       if (error5) {
@@ -496,7 +498,7 @@ export default function Article({ id }) {
               {article[0].comments.map(comments => (
                 <div className="flex">
                   <div className="flex-shrink-0 mr-3">
-                    <img className="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src={avatar} alt="" />
+                    {comments.user_email && <img className="mt-3 rounded-full w-6 h-6 sm:w-8 sm:h-8" src={avatar(comments.user_email)} alt="" />}
                   </div>
                   <div className="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
                     <strong>{comments.pseudo}</strong> <span className="text-xs text-gray-400">{comments.created_at}</span>
@@ -518,7 +520,7 @@ export default function Article({ id }) {
 
                       <div className="flex">
                         <div className="flex-shrink-0 mr-3">
-                          <img className="mt-3 rounded-full w-6 h-6 sm:w-8 sm:h-8" src={avatar} alt="" />
+                        {answers.user_email && <img className="mt-3 rounded-full w-6 h-6 sm:w-8 sm:h-8" src={avatar(answers.user_email)} alt="" />}
                         </div>
                         <div className="flex-1 bg-gray-100 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
                         <strong>{answers.pseudo}</strong> <span className="text-xs text-gray-400">{answers.created_at}</span>
