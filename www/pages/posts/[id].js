@@ -12,7 +12,7 @@ export default function Article({ id }) {
   const [article, setArticle] = useState(null)
   const [comments, setComments] = useState(null)
   const router = useRouter()
-  const { user } = useContext(UserContext)
+  const { user, avatar } = useContext(UserContext)
   const supabase = useSupabaseClient()
 
   //Récupération de l'article et des commentaires et des réponses
@@ -496,7 +496,7 @@ export default function Article({ id }) {
               {article[0].comments.map(comments => (
                 <div className="flex">
                   <div className="flex-shrink-0 mr-3">
-                    <img className="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="" />
+                    <img className="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" src={avatar} alt="" />
                   </div>
                   <div className="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
                     <strong>{comments.pseudo}</strong> <span className="text-xs text-gray-400">{comments.created_at}</span>
@@ -518,7 +518,7 @@ export default function Article({ id }) {
 
                       <div className="flex">
                         <div className="flex-shrink-0 mr-3">
-                          <img className="mt-3 rounded-full w-6 h-6 sm:w-8 sm:h-8" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="" />
+                          <img className="mt-3 rounded-full w-6 h-6 sm:w-8 sm:h-8" src={avatar} alt="" />
                         </div>
                         <div className="flex-1 bg-gray-100 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
                         <strong>{answers.pseudo}</strong> <span className="text-xs text-gray-400">{answers.created_at}</span>
