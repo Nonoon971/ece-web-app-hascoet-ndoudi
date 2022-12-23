@@ -29,7 +29,7 @@ export default function Articles(props) {
       </Head>
 
       <Layout>
-        <div className="bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
+        <div className="bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-20 max-w-xl">
         <h1>
           Tous les articles
         </h1>

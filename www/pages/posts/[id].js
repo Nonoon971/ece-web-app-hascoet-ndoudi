@@ -20,7 +20,7 @@ export default function Article({ id }) {
     (async () => {
       let { data, error, status } = await supabase
         .from('articles')
-        .select(`*, comments(*, answercomments(*))`)
+        .select(`*, comments(*, answercomment(*))`)
         .eq('id', id)
       setArticle(data)
       console.log(data)
@@ -140,6 +140,22 @@ export default function Article({ id }) {
     console.log(comments_id)
   }
 
+  function modifyAnswer() {
+    console.log(answer_id)
+    console.log(click)
+    click = click + 1;
+    let reponse = document.getElementById('modificationAnswer')
+    let span = document.getElementById('idmodifAnswer')
+    if (click % 2 == 0) {
+      reponse.className = "max-w-lg rounded-lg shadow-md shadow-blue-600/50 m-auto border-black border-2 hidden"
+    }
+    else {
+      reponse.className = "max-w-lg rounded-lg shadow-md shadow-blue-600/50 mx-auto border-black border-2"
+      span.innerHTML = answer_id
+    }
+    console.log(comments_id)
+  }
+
   function suppwindow() {
     console.log(comments_id)
     console.log(click)
@@ -152,6 +168,21 @@ export default function Article({ id }) {
     else {
       reponse.className = "max-w-lg rounded-lg shadow-md shadow-blue-600/50 mx-auto border-black border-2"
       span.innerHTML = comments_id
+    }
+    console.log(comments_id)
+  }
+  function suppwindowAnswer() {
+    console.log(answer_id)
+    console.log(click)
+    click = click + 1;
+    let reponse = document.getElementById('suppwindowAnswer')
+    let span = document.getElementById('idsuppAnswer')
+    if (click % 2 == 0) {
+      reponse.className = "max-w-lg rounded-lg shadow-md shadow-blue-600/50 m-auto border-black border-2 hidden"
+    }
+    else {
+      reponse.className = "max-w-lg rounded-lg shadow-md shadow-blue-600/50 mx-auto border-black border-2"
+      span.innerHTML = answer_id
     }
     console.log(comments_id)
   }
@@ -168,7 +199,7 @@ export default function Article({ id }) {
       let user_id = user.id
       document.get
       const { data5, error5 } = await supabase
-        .from('answercomments')
+        .from('answercomment')
         .insert({ contenu, user_id, pseudo, comments_id })
 
       // Print a friendly confirmation message
@@ -187,9 +218,9 @@ export default function Article({ id }) {
     }
     else //Sinon on insère sans et ça aura la valeur null
     {
-      pseudo = "anonyme"
+      let pseudo = "anonyme"
       const { data6, error6 } = await supabase
-        .from('answercomments')
+        .from('answercomment')
         .insert({ contenu, pseudo, comments_id })
       if (error6) {
         console.log("error")
@@ -226,6 +257,30 @@ export default function Article({ id }) {
       }
     }
   }
+
+  //Fonction modifer les réponses
+  const modifAnswer = async function (e) {
+    e.preventDefault()
+    // Si authentifié on insère avec l'user_id
+    if (user) {
+      const {error10 } = await supabase
+        .from('answercomment')
+        .update({contenu})
+        .eq('id',answer_id)
+
+      // Print a friendly confirmation message
+      if (error10) {
+        console.log("error")
+        console.log(error10)
+      }
+      else {
+        console.log("modification commentaire")
+        router.reload(window.location.pathname)
+
+      }
+    }
+  }
+
   //Fonction supprimer les commentaires
   const suppcomment = async function (e) {
     e.preventDefault()
@@ -248,6 +303,29 @@ export default function Article({ id }) {
       }
     }
   }
+  //Fonction supprimer les réponse
+  const suppAnswer = async function (e) {
+    e.preventDefault()
+    // Si authentifié on insère avec l'user_id
+    if (answer_id != undefined) {
+      const {error9} = await supabase
+        .from('answercomment')
+        .delete()
+        .eq('id',answer_id)
+
+      // Print a friendly confirmation message
+      if (error9) {
+        console.log("error")
+        console.log(error9)
+      }
+      else {
+        console.log("suppression commentaire")
+        router.reload(window.location.pathname)
+
+      }
+    }
+  }
+  const [answer_id, setAnswerID] = useState()
   let lien = "https://xxpeqblsyczvsphynbzo.supabase.co/storage/v1/object/public/joueurs/"
 
   return (
@@ -305,9 +383,10 @@ export default function Article({ id }) {
               </div>
             </form>
           </div>
-          <button id='modificateur'>
+          <button id='modificateur' className='hidden'>
           <Link href={`/posts/modArticle/${id}`}>Modifier</Link>
           </button><br/><br/>
+
         </div>
 
         {article && (
@@ -332,7 +411,7 @@ export default function Article({ id }) {
               </div>
               <div>
                 <button type='submit' className="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded">
-                  Comment
+                  Reply
                 </button>
               </div>
             </form>
@@ -364,11 +443,47 @@ export default function Article({ id }) {
             </form>
           </div>
 
+          <div id='modificationAnswer' className="max-w-lg rounded-lg shadow-md shadow-blue-600/50 m-auto border-black border-2 hidden">
+            <form onSubmit={modifAnswer} className="w-full p-4">
+              <div className="mb-2">
+                <label className="text-lg font-bold underline">Modify the answer n° <span id='idmodifAnswer' className=' text-orange-500'></span></label><br/>
+                <p className=' text-xs text-gray-500'>Click again on modify answer in order to close this tab</p>
+                <div>
+                  <label className=' font-bold float-left'>Votre modification<span className='text-red-700'>*</span>: </label><br />
+                  <textarea
+                    className="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
+                     value={contenu} onChange={(e) => setContenu(e.target.value)} required
+                    placeholder="">
+                  </textarea>
+                </div>
+              </div>
+              <div>
+                <button type='submit' className="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded">
+                  Modify
+                </button>
+              </div>
+            </form>
+          </div>
+
           <div id='suppwindow' className="max-w-lg rounded-lg shadow-md shadow-blue-600/50 m-auto border-black border-2 hidden">
             <form onSubmit={suppcomment} className="w-full p-4">
               <div className="mb-2">
                 <label className="text-lg font-bold underline">Etes vous sûr de vouloir supprimer le commentaire n°<span id='idsupp' className=' text-orange-500'></span></label><br/>
                 <p className=' text-xs text-gray-500'>Click again on suppression in order to close this tab</p>
+                <p className=' text-xs text-gray-500'>
+                  <button type='submit' className="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded">
+                    Oui
+                  </button>
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div id='suppwindowAnswer' className="max-w-lg rounded-lg shadow-md shadow-blue-600/50 m-auto border-black border-2 hidden">
+            <form onSubmit={suppAnswer} className="w-full p-4">
+              <div className="mb-2">
+                <label className="text-lg font-bold underline">Etes vous sûr de vouloir supprimer la réponse n°<span id='idsuppAnswer' className=' text-orange-500'></span></label><br/>
+                <p className=' text-xs text-gray-500'>Click again on suppression answer in order to close this tab</p>
                 <p className=' text-xs text-gray-500'>
                   <button type='submit' className="px-3 py-2 text-sm text-blue-100 bg-blue-600 rounded">
                     Oui
@@ -399,7 +514,7 @@ export default function Article({ id }) {
                     }
                       <button onClick={() => {setCommentsID(comments.id); response(); }} className="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs"> + Replies</button>
                       <div className="space-y-4">
-                    {comments.answercomments.map(answers => (
+                    {comments.answercomment.map(answers => (
 
                       <div className="flex">
                         <div className="flex-shrink-0 mr-3">
@@ -411,6 +526,13 @@ export default function Article({ id }) {
                           <p className="text-xs sm:text-sm">
                             {answers.contenu}
                           </p>
+                          {user && (answers.user_id==user.id) &&
+                        <div>
+                        <button className=" float-right my-5 uppercase tracking-wide text-red-600 font-bold text-xs ml-3" onClick={() => {setAnswerID(answers.id); console.log(answer_id); suppwindowAnswer()}} > Suppression</button>
+                        <button className="float-right my-5 uppercase tracking-wide text-blue-600 font-bold text-xs ml-3" onClick={() => {setAnswerID(answers.id); modifyAnswer(); }} > Modify</button>
+
+                        </div>
+                      }
                         </div>
                       </div>
                     ))}
