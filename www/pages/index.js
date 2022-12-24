@@ -49,38 +49,37 @@ export default function Home({ allPostsData }) {
             Noca est un blog vous permettant d'entrer dans une communauté de fan du ballon orange, 
             partagez vos ressentis sur les différents joueurs débattez, ayez du fun !
           </h2>
+
           <div className="grid mt-7">
           <div id="carre1" className='flex gap-10  m-auto mb-5'>
             <Link href="/about">
-              <a className="w-80 shadow-2xl m-auto rounded-md h-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-center font-bold hover:text-white">
-                <h3>About &rarr;</h3>
+              <a className="w-80 shadow-2xl m-auto rounded-lg  h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white hover:text-orange-500 font-bold">
+                <p className='text-xl'>About &rarr;</p>
                 <p>Find in-depth information about the project.</p>
               </a>
-
             </Link>
 
             <Link href="/admin/contact">
-              <a className="w-80 shadow-2xl rounded-md h-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-center font-bold hover:text-white">
-                <h3>Contacts &rarr;</h3>
+              <a className="w-80 shadow-2xl rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
+                <p className='text-xl'>Contacts &rarr;</p>
                 <p>Something to tell us?</p>
               </a>
-
             </Link>
           </div>
 
           <div id="carre2" className='flex gap-10  m-auto mb-14'>
             <Link
               href="/posts">
-              <a className="w-80 m-auto rounded-md h-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-center font-bold hover:text-white">
-                <h3>Articles &rarr;</h3>
+              <a className="w-80 m-auto rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
+                <p className='text-xl'>Articles &rarr;</p>
                 <p>Discover our articles.</p>
               </a>
             </Link>
 
             <Link
               href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-              <a className="w-80 rounded-md h-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-center font-bold hover:text-white">
-                <h3>Deploy &rarr;</h3>
+              <a className="w-80 rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
+                <p className='text-xl'>Deploy &rarr;</p>
                 <p>
                   Instantly deploy your Next.js site to a public URL with Vercel.
                 </p>
@@ -89,11 +88,7 @@ export default function Home({ allPostsData }) {
           </div>
         </div>
         </div>
-        <p className="text-center">
-          Démarrer par accéder a notre page <strong>About</strong>
-        </p>
-
-        
+        <div className='clear h-10'></div>
       </Layout>
 
     </div>

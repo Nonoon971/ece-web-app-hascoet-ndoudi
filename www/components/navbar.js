@@ -23,7 +23,7 @@ export const  Navbar = () => {
 
         if(currentTheme ==="dark"){
           return (
-            <SunIcon className=" bg-orange-500 hidden mt-1 h-10 w-10 shadow-lg lg:w-auto px-3 py-2 rounded font-bold items-center justify-center hover:text-white hover:bg-black dark:text- dark:hover:bg dark:inline-flex float-right" role="button" onClick={() => setTheme('light')}/>
+            <SunIcon className=" bg-orange-500 hidden mt-1 h-10 w-10 shadow-lg lg:w-auto px-3 py-2 rounded font-bold items-center justify-center hover:text-white hover:bg-black dark:text- dark:hover:bg-stone-400 dark:inline-flex float-right" role="button" onClick={() => setTheme('light')}/>
           )
         }
 

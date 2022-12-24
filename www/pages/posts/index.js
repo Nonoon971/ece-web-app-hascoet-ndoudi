@@ -2,12 +2,10 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { useContext } from 'react'
 import UserContext from '../../components/UserContext'
-import Image from 'next/image';
 import { useState, useEffect } from 'react'
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import Layout from '../../components/layout';
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
-import { Card, Button } from "flowbite-react";
+import { Card } from "flowbite-react";
 
 
 export default function Articles(props) {
@@ -34,7 +32,7 @@ export default function Articles(props) {
         <h1 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
           Tous les articles
         </h1>
-        {user && (<button className='bg-blue-500 float-right mr-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+        {user && (<button className='bg-black hover:bg-orange-500 dark:bg-orange-500 dark:hover:bg-gray-700 dark:text-black dark:hover:text-white float-right mr-4 text-white font-bold py-2 px-4 rounded'>
             <Link href="/newArticles">Ajouter un article</Link>
         </button>
         )}
@@ -52,11 +50,12 @@ export default function Articles(props) {
                 height={200}
                 width={200}
               />
-            <button className='bg-blue-500 float-right mr-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'><Link href={`/posts/${article.id}`}>
+            <button className='bg-black hover:bg-orange-500 float-right mr-4 text-white font-bold py-2 px-4 rounded'><Link href={`/posts/${article.id}`}>
               Read more</Link></button>
           </Card>
           ))}
         </div>
+        <div className='clear h-20'></div>
       </Layout>
     </div>
   );

@@ -292,10 +292,10 @@ export default function Article({id}) {
                       </div>
                   </div>
             <Layout>
-            <div className="text-center bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
+            <div className="text-center bg-orange-300 dark:bg-orange-800 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
             
                 <h1>Détails du joueur</h1>
-                <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-left'>
+                <button className='bg-black hover:bg-orange-700 dark:bg-orange-500 dark:hover:bg-black dark:text-black dark:hover:text-white text-white font-bold py-2 px-4 rounded float-left'>
                   <Link href={`/posts/${id}`}>Retour</Link>
                 </button>
                   <div className='w-full '>
@@ -305,7 +305,7 @@ export default function Article({id}) {
                             <dt>Name:</dt>
                             <dd>
                               {article[0].title}
-                              <button id="open-title" className={"w-6 h-6 block bg-sky-300 hover:bg-blue-500 hover:text-white rounded float-right"} onClick={cTitle}>
+                              <button id="open-title" className={"w-6 h-6 block bg-orange-300 dark:bg-orange-800 hover:bg-orange-700 dark:hover:bg-black hover:text-white rounded float-right"} onClick={cTitle}>
                                   <PencilSquareIcon className="h-6 w-6 " aria-hidden="true" />
                               </button>
                             </dd>
@@ -319,7 +319,7 @@ export default function Article({id}) {
                                 width={(200)}
                                 height={200}
                               />
-                              <button id="open-image" className={"w-6 h-6 block bg-sky-300 hover:bg-blue-500 hover:text-white rounded float-right"} onClick={cImage}>
+                              <button id="open-image" className={"w-6 h-6 block bg-orange-300 hover:bg-orange-700 dark:bg-orange-800 dark:hover:bg-black hover:text-white rounded float-right"} onClick={cImage}>
                                   <PencilSquareIcon className="h-6 w-6 " aria-hidden="true" />
                               </button>
                             </dd>
@@ -328,7 +328,7 @@ export default function Article({id}) {
                             <dt>Début de carrière:</dt>
                             <dd>
                               {article[0].date}
-                              <button id="open-date" className={"w-6 h-6 block bg-sky-300 hover:bg-blue-500 hover:text-white rounded float-right"} onClick={cDate}>
+                              <button id="open-date" className={"w-6 h-6 block bg-orange-300 hover:bg-orange-700 dark:bg-orange-800 dark:hover:bg-black hover:text-white rounded float-right"} onClick={cDate}>
                                   <PencilSquareIcon className="h-6 w-6 " aria-hidden="true" />
                               </button>
                             </dd>
@@ -337,7 +337,7 @@ export default function Article({id}) {
                             <dt>Son équipe:</dt>
                             <dd>
                               {article[0].team}
-                              <button id="open-team" className={"w-6 h-6 block bg-sky-300 hover:bg-blue-500 hover:text-white rounded float-right"} onClick={cTeam}>
+                              <button id="open-team" className={"w-6 h-6 block bg-orange-300 hover:bg-orange-700 dark:bg-orange-800 dark:hover:bg-black hover:text-white rounded float-right"} onClick={cTeam}>
                                   <PencilSquareIcon className="h-6 w-6 " aria-hidden="true" />
                               </button>
                             </dd>
@@ -346,7 +346,7 @@ export default function Article({id}) {
                             <dt>Information du joueur:</dt>
                             <dd>
                               {article[0].content}
-                              <button id="open-content" className={"w-6 h-6 block bg-sky-300 hover:bg-blue-500 hover:text-white rounded float-right"} onClick={cContent}>
+                              <button id="open-content" className={"w-6 h-6 block bg-orange-300 hover:bg-orange-700 dark:bg-orange-800 dark:hover:bg-black hover:text-white rounded float-right"} onClick={cContent}>
                                   <PencilSquareIcon className="h-6 w-6 " aria-hidden="true" />
                               </button>
                             </dd>

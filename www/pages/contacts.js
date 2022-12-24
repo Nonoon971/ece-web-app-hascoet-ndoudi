@@ -40,40 +40,40 @@ export default function Contacts() {
         <title>Contacts</title>
       </Head>
     <Layout>
-    <div className="bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
-      <h1 className='wt-title'>Contactez-nous</h1>
-      <p>
-        Un problème, une question ? Utilisez ce formulaire pour nous laissez un message !
-      </p><br/>
-      <form id="createMessage" className='border-orange-500 border-solid border-2 p-4 shadow-xl' onSubmit={onSubmit}>
-        <div>
-          <label>Votre nom <span className='text-red-700'>*</span> :</label>
-          <input type="text" id="nom" className='rounded-lg border block p-2' value={lastname} onChange={(e)=> setLastName(e.target.value)} required ></input>
-        </div><br/>
-        <div>
-          <label>Votre prénom <span className='text-red-700'>*</span> :</label>
-          <input type="text" id="prenom" className='rounded-lg border block p-2' value={firstname} onChange={(e)=> setName (e.target.value)} required></input>
-        </div><br/>
-        <div>
-          <label>Votre e-mail <span className='text-red-700'>*</span> :</label>
-          <input type="email" id="email" className='rounded-lg border block p-2' value={email} onChange={(e)=> setEmail (e.target.value)} required></input>
-        </div><br/>
-        <div>
-          <label>Le sujet de votre message:</label>
-          <input type="text" id="sujet" className='rounded-lg border block p-2'></input>
-        </div><br/>
-        <div>
-          <label>Votre message <span className='text-red-700'>*</span> :</label><br/>
-          <textarea id="message" className='rounded-lg border block p-2' value={message} onChange={(e)=> setMessage(e.target.value)} required ></textarea>
-        </div><br/>
-        <div>
-        <button type='submit' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
-          Envoyer
-        </button>
-        </div>
-      </form>
-      <span id="info"></span>
-    </div>
+      <div className="bg-orange-300 dark:border-black dark:bg-orange-800 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
+        <a className='text-4xl text-red-900 dark:text-orange-500 font-bold underline underline-offset-2'>Contactez-nous</a>
+        <p>
+          Un problème, une question ? Utilisez ce formulaire pour nous laissez un message !
+        </p><br/>
+        <form id="createMessage" className='border-orange-500 border-solid rounded-lg border-2 p-4 shadow-xl' onSubmit={onSubmit}>
+          <div>
+            <label>Votre nom <span className='text-red-700 dark:text-black'>*</span> :</label>
+            <input type="text" id="nom" className='rounded-lg border block p-2' value={lastname} onChange={(e)=> setLastName(e.target.value)} required ></input>
+          </div><br/>
+          <div>
+            <label>Votre prénom <span className='text-red-700 dark:text-black'>*</span> :</label>
+            <input type="text" id="prenom" className='rounded-lg border block p-2' value={firstname} onChange={(e)=> setName (e.target.value)} required></input>
+          </div><br/>
+          <div>
+            <label>Votre e-mail <span className='text-red-700 dark:text-black'>*</span> :</label>
+            <input type="email" id="email" className='rounded-lg border block p-2' value={email} onChange={(e)=> setEmail (e.target.value)} required></input>
+          </div><br/>
+          <div>
+            <label>Le sujet de votre message:</label>
+            <input type="text" id="sujet" className='rounded-lg border block p-2'></input>
+          </div><br/>
+          <div>
+            <label>Votre message <span className='text-red-700 dark:text-black'>*</span> :</label><br/>
+            <textarea id="message" className='rounded-lg border block p-2' value={message} onChange={(e)=> setMessage(e.target.value)} required ></textarea>
+          </div><br/>
+          <div>
+          <button type='submit' className=' bg-black hover:bg-orange-700 dark:bg-orange-500 dark:hover:bg-black dark:text-black dark:hover:text-white text-white font-bold py-2 px-4 rounded'>
+            Envoyer
+          </button>
+          </div>
+        </form>
+        <span id="info"></span>
+      </div>
     </Layout>
     </div>
   )
