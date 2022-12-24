@@ -33,7 +33,7 @@ export function ContextProvider ({
                     const hash = md5(address);
 
                     // Grab the actual image URL
-                    return `https://www.gravatar.com/avatar/${hash}`;
+                    return `https://www.gravatar.com/avatar/${hash}/?d=https://e7.pngegg.com/pngimages/59/644/png-clipart-silhouette-avatar-line-art-silhouette-animals-vexel.png`;
                   },
                 logout: async function() {
                     await supabaseClient.auth.signOut()

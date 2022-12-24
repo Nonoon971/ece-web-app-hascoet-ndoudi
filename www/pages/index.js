@@ -26,7 +26,7 @@ export default function Home({ allPostsData }) {
           <div className='justify-center flex  ' id='accueil'>
             <div className=' mx-12 my-0 min-w-0 max-w-6xl w-full block '>
               <div className='flex-row flex w-full'>
-                <div className=' w-96 z-10 flex-col h-full pt-24 pb-24 flex '>
+                <div className=' text-white w-96 z-10 flex-col h-full pt-24 pb-24 flex dark:text-black'>
                   <div className=' mb-9 block' id='titre'>
                     <h1 className="text-7xl font-test font-normal m-4 block tracking-tighter w-72">
                       Noca !
@@ -45,7 +45,7 @@ export default function Home({ allPostsData }) {
         </div>
 
         <div className='text-center prose box-content max-w-screen-lg mx-auto px-5'>
-          <h2 className='w-[80%] m-auto py-20 leading-x-10'>
+          <h2 className='w-[80%] m-auto py-20 leading-x-10 dark:text-white'>
             Noca est un blog vous permettant d'entrer dans une communauté de fan du ballon orange, 
             partagez vos ressentis sur les différents joueurs débattez, ayez du fun !
           </h2>

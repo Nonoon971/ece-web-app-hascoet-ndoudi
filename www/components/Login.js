@@ -19,7 +19,7 @@ export default function LoggedIn(){
     >
       {user ?
         <>
-          <img src={avatar(user.email)} height={35} width={35} />
+          <img className='rounded-full w-6 h-6 sm:w-8 sm:h-8' src={avatar(user.email)} height={35} width={35} />
           {user.user_metadata.preferred_username}
         </>
         :

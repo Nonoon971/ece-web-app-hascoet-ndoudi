@@ -52,7 +52,7 @@ export default function Article() {
         <title>Nouvel article</title>
       </Head>
     <Layout>
-    <div className="bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
+    <div className="bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-20 max-w-xl dark:bg-blue-900">
       <h1 className='wt-title'>Fiche pour ajouter un nouveau joueur</h1>
       <p>
         Ajouter un nouveau joueur ici
@@ -60,19 +60,19 @@ export default function Article() {
       <form id="createArticle" className='border-solid border-2 p-4 shadow-xl' onSubmit={onSubmit}>
         <div>
           <label>Nom du joueur <span className='text-red-700'>*</span> :</label>
-          <input type="text" id="nom" className='rounded-lg border block p-2' value={title} onChange={(e)=> setTitle(e.target.value)} required ></input>
+          <input type="text" id="nom" className=' dark:bg-black dark:text-white rounded-lg border block p-2' value={title} onChange={(e)=> setTitle(e.target.value)} required ></input>
         </div><br/>
         <div>
           <label>La team du joueur <span className='text-red-700'>*</span> :</label>
-          <input type="text" id="equipe" className='rounded-lg border block p-2' value={team} onChange={(e)=> setTeam (e.target.value)} required></input>
+          <input type="text" id="equipe" className=' dark:bg-black dark:text-white rounded-lg border block p-2' value={team} onChange={(e)=> setTeam (e.target.value)} required></input>
         </div><br/>
         <div>
           <label>Date début carrière <span className='text-red-700'>*</span> :</label>
-          <input type="number" placeholder="YYYY" id="debutdate" min="1946" max="2022" step="1" className='rounded-lg border block p-2' value={date} onChange={(e)=> setDate (e.target.value)} required></input>
+          <input type="number" placeholder="YYYY" id="debutdate" min="1946" max="2022" step="1" className='dark:bg-black dark:text-white rounded-lg border block p-2' value={date} onChange={(e)=> setDate (e.target.value)} required></input>
         </div><br/>
         <div>
           <label>Information sur le joueur<span className='text-red-700'>*</span> :</label>
-          <textarea type="text" id="information" className='rounded-lg border block p-2' value={content} onChange={(e)=> setContent(e.target.value)} required></textarea>
+          <textarea type="text" id="information" className='dark:bg-black dark:text-white rounded-lg border block p-2' value={content} onChange={(e)=> setContent(e.target.value)} required></textarea>
         </div><br/>
         <div>
           <label>Photo du joueur</label><br/>
