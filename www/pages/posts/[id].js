@@ -358,6 +358,7 @@ export default function Article({ id }) {
                   <br />
                   Son équipe: {article[0].team}
                   <br />
+                  Ses informations: {article[0].content}
                   </p><br />
                 </div>
             )}

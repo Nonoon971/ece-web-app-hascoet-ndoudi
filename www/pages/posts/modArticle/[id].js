@@ -27,9 +27,6 @@ export default function Article({id}) {
           setArticle(data)
           console.log(data)
       })()
-    }, [id])
-
-    useEffect(() => {
       window.onclick = (event) => {
         if (event.target == document.getElementById('modalTitle')) {
           document.getElementById('modalTitle').className = "fixed hidden insert-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
@@ -47,8 +44,7 @@ export default function Article({id}) {
           document.getElementById('modalContent').className = "fixed hidden insert-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
         }
       }
-    }, []);
-    
+    }, [id])
 
     const cTitle = () => {
       document.getElementById('modalTitle').className = "fixed insert-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"

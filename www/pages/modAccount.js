@@ -11,17 +11,17 @@ export default function ModifAccount() {
   const [confirmed, setConfirmed] = useState('')
   const [email, setEmail] = useState('')
 
-  if (user){
-    console.log(user.app_metadata.provider)
-    if (user.app_metadata.provider == 'github'){
-      document.getElementById('modGit').className = "w-full"
-    }
-    else if (user.app_metadata.provider == 'email'){
-      document.getElementById('mod').className = "w-full"
-    }
-  }
-
   useEffect(() => {
+    
+    if (user){
+      if (user.app_metadata.provider == 'github'){
+        document.getElementById('modGit').className = "w-full"
+      }
+      else if (user.app_metadata.provider == 'email'){
+        document.getElementById('mod').className = "w-full"
+      }
+    }
+
     window.onclick = (event) => {
       if (event.target == document.getElementById('modalPass')) {
         document.getElementById('modalPass').className = "fixed hidden insert-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
@@ -123,33 +123,33 @@ export default function ModifAccount() {
       </div>
 
       <Layout>
-      <div className="bg-sky-300 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
-          <h1 className='wt-title'>Changez votre profile</h1>
-          <div className='w-full hidden' id='mod'>
-            <div className="mt-10 divide-y divide-slate-200 md:rounded-lg">
-              <dl className='grid grid-cols-[auto_1fr] px-3 py-4 [&_dt]:italic [&_dt]:pr-20'>
-                <dt>Changer votre email</dt>
-                <dd>
-                  <button id="open-title" className={"w-6 h-6 block bg-sky-300 hover:bg-blue-500 hover:text-white rounded float-right"} onClick={resetEmail}>
-                      <PencilSquareIcon className="h-6 w-6 " aria-hidden="true" />
-                  </button>
-                </dd>
-              </dl>
-              <dl className='grid grid-cols-[auto_1fr] px-3 py-4 [&_dt]:italic [&_dt]:pr-20'>
-                <dt>Changer votre mot de passe</dt>
-                <dd>
-                  <button id="open-title" className={"w-6 h-6 block bg-sky-300 hover:bg-blue-500 hover:text-white rounded float-right"} onClick={resetPass}>
-                      <PencilSquareIcon className="h-6 w-6 " aria-hidden="true" />
-                  </button>
-                </dd>
-              </dl>
+        <div className="bg-orange-300 dark:bg-orange-800 p-3 mt-3 mx-auto rounded-md mb-6 max-w-xl">
+          <a className='text-4xl text-red-900 dark:text-orange-500 font-bold underline underline-offset-2'>Changez votre profile</a>
+            <div className='w-full hidden' id='mod'>
+              <div className="mt-10 divide-y divide-slate-200 md:rounded-lg">
+                <dl className='grid grid-cols-[auto_1fr] px-3 py-4 [&_dt]:italic [&_dt]:pr-20'>
+                  <dt>Changer votre email</dt>
+                  <dd>
+                    <button id="open-title" className={"w-6 h-6 block bg-orange-300 dark:bg-orange-800 hover:bg-orange-700 dark:hover:bg-black hover:text-white rounded float-right"} onClick={resetEmail}>
+                        <PencilSquareIcon className="h-6 w-6 " aria-hidden="true" />
+                    </button>
+                  </dd>
+                </dl>
+                <dl className='grid grid-cols-[auto_1fr] px-3 py-4 [&_dt]:italic [&_dt]:pr-20'>
+                  <dt>Changer votre mot de passe</dt>
+                  <dd>
+                    <button id="open-title" className={"w-6 h-6 block bg-orange-300 dark:bg-orange-800 hover:bg-orange-700 dark:hover:bg-black rounded float-right"} onClick={resetPass}>
+                        <PencilSquareIcon className="h-6 w-6 " aria-hidden="true" />
+                    </button>
+                  </dd>
+                </dl>
+              </div>
             </div>
-          </div>
-          <div className='hidden w-full' id='modGit'>
-            <h1 className='text-xl'>Vous êtes connecté grâce a github si vous voulez modifier des éléments de votre compte dirigez vous vers ce lien :</h1><br/>
-            <Link href={'https://github.com'}>Github.com</Link>
-          </div>
-      </div>
+            <div className='hidden w-full' id='modGit'>
+              <h1 className='text-xl'>Vous êtes connecté grâce a github si vous voulez modifier des éléments de votre compte dirigez vous vers ce lien :</h1><br/>
+              <Link href={'https://github.com'}>Github.com</Link>
+            </div>
+        </div>
       </Layout>
     </div>
   )
