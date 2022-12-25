@@ -3,7 +3,7 @@ import Context from './UserContext';
 import Link from 'next/link'
 import {useTheme} from "next-themes";
 import Image from 'next/image';
-import logo from '../images/accueil.png'
+import logo from '../content/images/accueil.png'
 import Login from './Login'
 import { MoonIcon,SunIcon } from '@heroicons/react/20/solid'
 

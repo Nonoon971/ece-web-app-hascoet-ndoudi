@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import UserContext from '../components/UserContext'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import Layout from '../components/layout';
@@ -13,7 +13,14 @@ export default function Article() {
   const[date,setDate]=useState('')
   const[content,setContent]=useState('')
   const { user } = useContext(UserContext)
-  let user_id = user.id
+  let user_id = ''
+
+  useEffect(() => {
+    if (user){
+      console.log(user)
+      user_id = user.id
+    }
+  }, [])
 
   const supabase = useSupabaseClient()
 

@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { XMarkIcon, CogIcon } from '@heroicons/react/20/solid'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 
-export default function Contact() {
+export default function Profile() {
   const { user, logout, loading, avatar } = useContext(UserContext)
   const [imageSrc, setImageSrc] = useState('')
   const router = useRouter()

@@ -39,9 +39,7 @@ export default function Article({ id }) {
       modif.className = 'bg-black hover:bg-orange-500 dark:bg-orange-500 dark:hover:bg-gray-700 dark:text-black dark:hover:text-white text-white font-bold py-2 px-4 rounded float-left mt-4'
     }
   }
-
-
-
+  
   //Fonction de suppression
   const suppression = async function (e) {
     e.preventDefault()

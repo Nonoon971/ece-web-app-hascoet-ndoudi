@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../components/layout';
-import ombre from '../images/ombres.gif'
+import ombre from '../content/images/ombres.gif'
 
 export default function Home({ allPostsData }) {
   return (
@@ -63,8 +63,8 @@ export default function Home({ allPostsData }) {
             <Link
               href="/posts">
               <a className="w-80 m-auto rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
-                <p className='text-xl'>Articles &rarr;</p>
-                <p>Discover our articles.</p>
+                <p className='text-xl'>Players &rarr;</p>
+                <p>Discover the players.</p>
               </a>
             </Link>
 

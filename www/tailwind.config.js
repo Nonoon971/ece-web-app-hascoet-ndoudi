@@ -13,7 +13,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage:{
-        'accueil': "url('../images/ombres.gif')"
+        'accueil': "url('../content/images/ombres.gif')"
       }
     },
     fontFamily: {
