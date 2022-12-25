@@ -68,11 +68,11 @@ export default function ModifAccount() {
               <div className="mt-3 text-center">
                   <h3 className="text-2xl leading-6 font-medium text-gray-900">Changer le mot de passe</h3>
                   <form>
-                  <div className="mt-2 px-7 py-3">
+                  <div className="mt-2 px-7 py-3 dark:text-black">
                       <p>Nouveau</p>
                       <input type="text" id="mdp" className='text-sm rounded' value={password} onChange={(e)=> setPassword(e.target.value)}></input>
                   </div>
-                  <div className="mt-2 px-7 py-3">
+                  <div className="mt-2 px-7 py-3 dark:text-black">
                       <p>Confirmer</p>
                       <input type="text" id="confirme" className='text-sm rounded' value={confirmed} onChange={(e)=> setConfirmed(e.target.value)}></input>
                   </div>
