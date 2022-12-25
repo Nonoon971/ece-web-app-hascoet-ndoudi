@@ -14,26 +14,18 @@ export default function Home({ allPostsData }) {
 
       <Layout>
 
-        <div className='bg-orange-500 relative overflow-hidden block border-b-2 border-black w-full'>
-          <div className=' w-96 absolute block right-0'>
-            <Image className='w-full h-full'
-              src={ombre}
-              alt="Picture of the image"
-              width={(864)}
-              height={864}
-            />
-          </div>
-          <div className='justify-center flex  ' id='accueil'>
+        <div className='bg-orange-500 relative overflow-hidden block border-b-2 border-black w-full bg-accueil'>
+          <div className='justify-center flex ' id='accueil'>
             <div className=' mx-12 my-0 min-w-0 max-w-6xl w-full block '>
               <div className='flex-row flex w-full'>
                 <div className=' text-white w-96 z-10 flex-col h-full pt-24 pb-24 flex dark:text-black'>
                   <div className=' mb-9 block' id='titre'>
-                    <h1 className="text-7xl font-test font-normal m-4 block tracking-tighter w-72">
+                    <h1 className="text-7xl font-test font-bold m-4 block tracking-tighter w-72 text-white rounded">
                       Noca !
                     </h1>
                   </div>
                   <div className=' w-4/5 mb-12 block'>
-                    <h3 className=' text-2xl font-sstitre font-normal'>
+                    <h3 className=' text-2xl font-sstitre font-bold text-white rounded'>
                       Le lieu où vous pouvez tout dire sur vos joueurs préférés (ou détestés) !
                     </h3>
 

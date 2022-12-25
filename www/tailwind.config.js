@@ -11,7 +11,11 @@ module.exports = {
   ],
   darkMode:'class',
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage:{
+        'accueil': "url('../images/ombres.gif')"
+      }
+    },
     fontFamily: {
       'test':['gt-super', 'Georgia', 'Cambria', "Times New Roman", 'Times', 'serif'],
       'sstitre':['sohne', "Helvetica Neue", 'Helvetica', 'Arial', 'sans-serif']
