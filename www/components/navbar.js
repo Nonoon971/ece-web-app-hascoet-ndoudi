@@ -58,7 +58,7 @@ export const  Navbar = () => {
             </Link>
 
             <Link href="/posts">
-                <a className=" bg-orange-500 inline-flex mx-6 shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-black hover:text-white dark:text-black dark:hover:bg-stone-400">Articles</a>
+                <a className=" bg-orange-500 inline-flex mx-6 shadow-lg lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-black hover:text-white dark:text-black dark:hover:bg-stone-400">Players</a>
             </Link>
 
             <a className="bg-orange-500 ml-6 inline-flex shadow-lg float-right lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-black hover:text-white dark:text-black dark:hover:bg-stone-400"><Login /></a>

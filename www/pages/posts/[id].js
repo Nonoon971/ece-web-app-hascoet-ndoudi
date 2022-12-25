@@ -330,7 +330,7 @@ export default function Article({ id }) {
   return (
     <div>
       <Head>
-        <title>Info article</title>
+        <title>Info player</title>
       </Head>
       <Layout>
         <div className='flex'>

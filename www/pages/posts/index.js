@@ -25,12 +25,12 @@ export default function Articles(props) {
   return (
     <div>
       <Head>
-        <title>Articles</title>
+        <title>Players</title>
       </Head>
 
       <Layout>
         <h1 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
-          Tous les articles
+          Les joueurs de basket
         </h1>
         {user && (<button className='bg-black hover:bg-orange-500 dark:bg-orange-500 dark:hover:bg-gray-700 dark:text-black dark:hover:text-white float-right mr-4 text-white font-bold py-2 px-4 rounded'>
             <Link href="/newArticles">Ajouter un article</Link>
