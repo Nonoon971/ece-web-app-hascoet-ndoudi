@@ -14,11 +14,11 @@ export default function About() {
           <ul>
             <li className='mb-4 ml-4'>
               <a className='underline underline-offset-1'>Norine Ndoudi :</a><br/>
-              <a>19 ans et étudiante à l'ECE Paris en ING' en Système d'information</a>
+              <a>20 ans et étudiante à l'ECE Paris en ING4 en Système d'information</a>
             </li>
             <li className='mb-4 ml-4'>
               <a className='underline underline-offset-1'>Camille Hascoët :</a><br/>
-              <a>23 ans et étudiante à l'ECE Paris en ING' en Système d'information</a>
+              <a>23 ans et étudiante à l'ECE Paris en ING4 en Système d'information</a>
             </li>
           </ul>
           <div className='text-lg mb-3 font-bold underline underline-offset-1'><a>En quoi consiste notre blog :</a></div>
@@ -28,7 +28,7 @@ export default function About() {
             <Link href="/">Retour page d'accueil</Link>
           </button>
         </div>
-        
+
       </Layout>
     </div>
 
