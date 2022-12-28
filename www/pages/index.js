@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/image';
 import Layout from '../components/layout';
-import ombre from '../content/images/ombres.gif'
 
 export default function Home({ allPostsData }) {
   return (
@@ -38,47 +36,47 @@ export default function Home({ allPostsData }) {
 
         <div className='text-center prose box-content max-w-screen-lg mx-auto px-5'>
           <h2 className='w-[80%] m-auto py-20 leading-x-10 dark:text-white'>
-            Noca est un blog vous permettant d'entrer dans une communauté de fan du ballon orange, 
+            Noca est un blog vous permettant d'entrer dans une communauté de fan du ballon orange,
             partagez vos ressentis sur les différents joueurs débattez, ayez du fun !
           </h2>
 
           <div className="grid mt-7">
-          <div id="carre1" className='flex gap-10  m-auto mb-5'>
-            <Link href="/about">
-              <a className="w-80 shadow-2xl m-auto rounded-lg  h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white hover:text-orange-500 font-bold">
-                <p className='text-xl'>About &rarr;</p>
-                <p>Find in-depth information about the project.</p>
-              </a>
-            </Link>
+            <div id="carre1" className='flex gap-10  m-auto mb-5'>
+              <Link href="/about">
+                <a className="w-80 shadow-2xl m-auto rounded-lg  h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white hover:text-orange-500 font-bold">
+                  <p className='text-xl'>About &rarr;</p>
+                  <p>Find in-depth information about the project.</p>
+                </a>
+              </Link>
 
-            <Link href="/admin/contact">
-              <a className="w-80 shadow-2xl rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
-                <p className='text-xl'>Contacts &rarr;</p>
-                <p>Something to tell us?</p>
-              </a>
-            </Link>
+              <Link href="/admin/contact">
+                <a className="w-80 shadow-2xl rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
+                  <p className='text-xl'>Contacts &rarr;</p>
+                  <p>Something to tell us?</p>
+                </a>
+              </Link>
+            </div>
+
+            <div id="carre2" className='flex gap-10  m-auto mb-14'>
+              <Link
+                href="/posts">
+                <a className="w-80 m-auto rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
+                  <p className='text-xl'>Players &rarr;</p>
+                  <p>Discover the players.</p>
+                </a>
+              </Link>
+
+              <Link
+                href="/profile">
+                <a className="w-80 rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
+                  <p className='text-xl'>Profile &rarr;</p>
+                  <p>
+                    Find your comments and players on your profile
+                  </p>
+                </a>
+              </Link>
+            </div>
           </div>
-
-          <div id="carre2" className='flex gap-10  m-auto mb-14'>
-            <Link
-              href="/posts">
-              <a className="w-80 m-auto rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
-                <p className='text-xl'>Players &rarr;</p>
-                <p>Discover the players.</p>
-              </a>
-            </Link>
-
-            <Link
-              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-              <a className="w-80 rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
-                <p className='text-xl'>Deploy &rarr;</p>
-                <p>
-                  Instantly deploy your Next.js site to a public URL with Vercel.
-                </p>
-              </a>
-            </Link>
-          </div>
-        </div>
         </div>
         <div className='clear h-10'></div>
       </Layout>

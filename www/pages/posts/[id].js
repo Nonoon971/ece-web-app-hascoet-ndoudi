@@ -34,9 +34,9 @@ export default function Article({ id }) {
     let modif = document.getElementById("modificateur")
     if (article[0].user_id == user.id) {
       createur.innerHTML = "Supprimer l'article"
-      createur.className = 'bg-black hover:bg-orange-500 dark:bg-orange-500 dark:hover:bg-gray-700 dark:text-black dark:hover:text-white text-white font-bold py-2 px-4 rounded float-right'
+      createur.className = 'bg-black hover:bg-orange-500 dark:bg-orange-500 dark:hover:bg-gray-700 dark:text-black dark:hover:text-white text-white font-bold py-2 px-4 rounded float-right mt-3'
 
-      modif.className = 'bg-black hover:bg-orange-500 dark:bg-orange-500 dark:hover:bg-gray-700 dark:text-black dark:hover:text-white text-white font-bold py-2 px-4 rounded float-left mt-4'
+      modif.className = 'bg-black hover:bg-orange-500 dark:bg-orange-500 dark:hover:bg-gray-700 dark:text-black dark:hover:text-white text-white font-bold py-2 px-4 rounded float-right mr-2 mt-3'
     }
   }
   
@@ -341,6 +341,9 @@ export default function Article({ id }) {
             </button>
             <button id='createur' onClick={suppression}>
             </button>
+            <button id='modificateur' className='hidden'>
+              <Link href={`/posts/modArticle/${id}`}>Modifier</Link>
+            </button>
             {article && (
               <div className=' mt-16'>
                 <p className="italic font-bold hover:text-red-800">
@@ -384,9 +387,7 @@ export default function Article({ id }) {
                 </div>
               </form>
             </div>
-            <button id='modificateur' className='hidden'>
-              <Link href={`/posts/modArticle/${id}`}>Modifier</Link>
-            </button><br/><br/>
+            <br/><br/>
             <div className='clear h-20'></div>
           </div>
           
