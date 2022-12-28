@@ -49,7 +49,7 @@ export default function Home({ allPostsData }) {
                 </a>
               </Link>
 
-              <Link href="/admin/contact">
+              <Link href="/contacts">
                 <a className="w-80 shadow-2xl rounded-lg h-auto bg-gradient-to-r from-gray-600 to-gray-900 text-center text-white font-bold hover:text-orange-500">
                   <p className='text-xl'>Contacts &rarr;</p>
                   <p>Something to tell us?</p>
