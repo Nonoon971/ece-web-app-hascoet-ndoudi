@@ -45,53 +45,53 @@ export default function Profile() {
     logout()
   }
 
-    const listeElement = async function (e) {
-      e.preventDefault()
+  const listeElement = async function (e) {
+    e.preventDefault()
 
-      const { data, error, status } = await supabase
-        .from('articles')
-        .select()
-        .eq('user_id', user.id)
-      if (error) {
-        console.log('error récupération')
-      }
-      else {
-        setElement(data)
-      }
+    const { data, error, status } = await supabase
+      .from('articles')
+      .select()
+      .eq('user_id', user.id)
+    if (error) {
+      console.log('error récupération')
     }
-
-    const listeCommentaire = async function (e) {
-      e.preventDefault()
-
-      const { data, error } = await supabase
-        .from('comments')
-        .select(`*,articles(title)`)
-        .eq('user_id', user.id)
-      if (error) {
-        console.log('error récupération')
-      }
-      else {
-        console.log(data)
-        setListeComment(data)
-      }
+    else {
+      setElement(data)
     }
+  }
 
-    const listeReponse = async function (e) {
-      e.preventDefault()
+  const listeCommentaire = async function (e) {
+    e.preventDefault()
 
-      const { data, error } = await supabase
-        .from('answercomment')
-        .select(`*,comments(title,content, pseudo, articles(title))`)
-        .eq('user_id', user.id)
-      if (error) {
-        console.log('error récupération')
-      }
-      else {
-        console.log(data)
-        setListeReponse(data)
-      }
+    const { data, error } = await supabase
+      .from('comments')
+      .select(`*,articles(title)`)
+      .eq('user_id', user.id)
+    if (error) {
+      console.log('error récupération')
     }
-    let lien = "https://xxpeqblsyczvsphynbzo.supabase.co/storage/v1/object/public/joueurs/"
+    else {
+      console.log(data)
+      setListeComment(data)
+    }
+  }
+
+  const listeReponse = async function (e) {
+    e.preventDefault()
+
+    const { data, error } = await supabase
+      .from('answercomment')
+      .select(`*,comments(title,content, pseudo, articles(title))`)
+      .eq('user_id', user.id)
+    if (error) {
+      console.log('error récupération')
+    }
+    else {
+      console.log(data)
+      setListeReponse(data)
+    }
+  }
+  let lien = "https://xxpeqblsyczvsphynbzo.supabase.co/storage/v1/object/public/joueurs/"
   return (
     <Layout>
       <Head>
@@ -121,64 +121,64 @@ export default function Profile() {
         <div >
           {user && (
             <div className='h-full w-1/2 float-right mb-20'>
-            <div className='flex flex-col float-left mt-3 w-1/2 m-0'>
-              <h2 className=' text-center underline text-xl'>Vos commentaires</h2>
+              <div className='flex flex-col float-left mt-3 w-1/2 m-0'>
+                <h2 className=' text-center underline text-xl'>Vos commentaires</h2>
 
-              {listecomment.map(comment =>(
+                {listecomment.map(comment => (
                   <p className='rounded border-2 border-black p-2 mb-2'>
                     Vous avez commenté ceci sur la page de <span className=' text-red-700'>{comment.articles.title}</span> :
                     <span className=' font-bold'> "{comment.content}" le {comment.created_at}</span>
                   </p>
 
-              ))}
-              {listereponse.map(reponse =>(
-                <p className='rounded border-2 border-black p-2 mt-2'>
-                  Vous avez répondu ceci sur la page de <span className=' text-red-700'>{reponse.comments.articles.title}</span> :
-                  <span className=' font-bold'> "{reponse.contenu}" le {reponse.created_at} </span>
-                  concernant le commentaire de {reponse.comments.pseudo}: "{reponse.comments.content}"
-                </p>
-              ))}
-            </div>
-            <div className='flex flex-col float-right mt-3 w-1/2 text-center items-center'>
-            <h2 className='float-right mb-2 underline text-xl'>Vos joueurs</h2>
-            {element.map(article => (
-              <div>
-                <h4>{article.title}</h4>
-                <img className='m-auto'
-                    src={lien + article.image}
-                    alt="Picture of the player"
-                    width={(100)}
-                    height={100}
-                  />
+                ))}
+                {listereponse.map(reponse => (
+                  <p className='rounded border-2 border-black p-2 mt-2'>
+                    Vous avez répondu ceci sur la page de <span className=' text-red-700'>{reponse.comments.articles.title}</span> :
+                    <span className=' font-bold'> "{reponse.contenu}" le {reponse.created_at} </span>
+                    concernant le commentaire de {reponse.comments.pseudo}: "{reponse.comments.content}"
+                  </p>
+                ))}
               </div>
-            ))}
-            </div>
+              <div className='flex flex-col float-right mt-3 w-1/2 text-center items-center'>
+                <h2 className='float-right mb-2 underline text-xl'>Vos joueurs</h2>
+                {element.map(article => (
+                  <div>
+                    <h4>{article.title}</h4>
+                    <img className='m-auto'
+                      src={lien + article.image}
+                      alt="Picture of the player"
+                      width={(100)}
+                      height={100}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
           )}
           <div className='w-1/2 h-full'>
-          <div className='my-6 mx-6'>
-            <img className='rounded-full' src={imageSrc} height={100} width={100} />
-          </div>
-          <div className='my-6 mx-6'>
-            <a className='underline underline-offset-2 font-bold text-xl'>Vous êtes connecté grâce à votre :</a><a> </a>
-            <a className='text-xl' id='provider'></a>
-          </div>
-          <div className='my-6 mx-6'>
-            <a className='underline underline-offset-2 font-bold text-xl'>Email :</a><a> </a>
-            <a className='text-xl' id='email'></a>
-          </div>
-          <div id='modGit'>
-            <div>
-              <a className='underline underline-offset-2 font-bold text-xl'>Pseudo :</a><a> </a>
-              <a className='text-xl' id='pseudoGit'></a>
+            <div className='my-6 mx-6'>
+              <img className='rounded-full' src={imageSrc} height={100} width={100} />
             </div>
-          </div>
-          <div id='modEmail'>
-            <div>
-              <a className='underline underline-offset-2 font-bold text-xl'></a><a> </a>
+            <div className='my-6 mx-6'>
+              <a className='underline underline-offset-2 font-bold text-xl'>Vous êtes connecté grâce à votre :</a><a> </a>
+              <a className='text-xl' id='provider'></a>
             </div>
-          </div>
+            <div className='my-6 mx-6'>
+              <a className='underline underline-offset-2 font-bold text-xl'>Email :</a><a> </a>
+              <a className='text-xl' id='email'></a>
+            </div>
+            <div id='modGit'>
+              <div>
+                <a className='underline underline-offset-2 font-bold text-xl'>Pseudo :</a><a> </a>
+                <a className='text-xl' id='pseudoGit'></a>
+              </div>
+            </div>
+            <div id='modEmail'>
+              <div>
+                <a className='underline underline-offset-2 font-bold text-xl'></a><a> </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

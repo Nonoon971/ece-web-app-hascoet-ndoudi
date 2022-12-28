@@ -10,7 +10,7 @@ export default function Contact() {
   const { user } = useContext(UserContext)
   const router = useRouter()
   const supabaseClient = useSupabaseClient()
-  if(user) router.push('/profile')
+  if (user) router.push('/profile')
   return (
     <Layout>
       <Head>
@@ -18,9 +18,9 @@ export default function Contact() {
       </Head>
       <div>
         <Auth
-        supabaseClient={supabaseClient}
-        appearance={{ theme: ThemeSupa }}
-        providers={['github']}
+          supabaseClient={supabaseClient}
+          appearance={{ theme: ThemeSupa }}
+          providers={['github']}
         />
       </div>
     </Layout>
