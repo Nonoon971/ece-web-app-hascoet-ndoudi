@@ -8,6 +8,8 @@ import Link from 'next/link'
 export default function ModifAccount() {
   const { user } = useContext(UserContext)
   const [password, setPassword] = useState('')
+  const [passShown1, setPassshown1] = useState('')
+  const [passShown2, setPassshown2] = useState('')
   const [confirmed, setConfirmed] = useState('')
   const [email, setEmail] = useState('')
 
@@ -20,6 +22,7 @@ export default function ModifAccount() {
       else if (user.app_metadata.provider == 'email') {
         document.getElementById('mod').className = "w-full"
       }
+      setEmail(user.email)
     }
 
     window.onclick = (event) => {
@@ -58,6 +61,16 @@ export default function ModifAccount() {
     document.getElementById('modalEmail').className = "fixed hidden insert-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
   }
 
+  const showpass1 = async function (e) {
+    e.preventDefault()
+    setPassshown1(!passShown1)
+  }
+
+  const showpass2 = async function (e) {
+    e.preventDefault()
+    setPassshown2(!passShown2)
+  }
+
   return (
     <div>
       <Head>
@@ -70,11 +83,13 @@ export default function ModifAccount() {
             <form>
               <div className="mt-2 px-7 py-3 dark:text-black">
                 <p>Nouveau</p>
-                <input type="text" id="mdp" className='text-sm rounded' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                <input type={passShown1 ? "text" : "password"} id="mdp" className='text-sm rounded' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                <button onClick={showpass1}>show</button>
               </div>
               <div className="mt-2 px-7 py-3 dark:text-black">
                 <p>Confirmer</p>
-                <input type="text" id="confirme" className='text-sm rounded' value={confirmed} onChange={(e) => setConfirmed(e.target.value)}></input>
+                <input type={passShown2 ? "text" : "password"} id="confirme" className='text-sm rounded' value={confirmed} onChange={(e) => setConfirmed(e.target.value)}></input>
+                <button onClick={showpass2}>show</button>
               </div>
             </form>
             <div className="items-center px-4 py-3 flex">
@@ -128,7 +143,7 @@ export default function ModifAccount() {
           <div className='w-full hidden' id='mod'>
             <div className="mt-10 divide-y divide-slate-200 md:rounded-lg">
               <dl className='grid grid-cols-[auto_1fr] px-3 py-4 [&_dt]:italic [&_dt]:pr-20'>
-                <dt>Changer votre email</dt>
+                <dt>Changer votre email: {email}</dt>
                 <dd>
                   <button id="open-title" className={"w-6 h-6 block bg-orange-300 dark:bg-orange-800 hover:bg-orange-700 dark:hover:bg-black hover:text-white rounded float-right"} onClick={resetEmail}>
                     <PencilSquareIcon className="h-6 w-6 " aria-hidden="true" />
