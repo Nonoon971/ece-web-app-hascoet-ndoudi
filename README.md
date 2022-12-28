@@ -119,6 +119,6 @@
 * Réactions aux commentaires  
   *Vous pouvez répondre à un commentaire en dessous de chaque commentaire principal.*
 
-[^1]: Supabase ayant besoin de .env pour fonctionner avec les étapes au-dessus, vous ne pourrez pas faire fonctionner notre supabase local. Cependant Paul Farrault à êtes ajouté à notre supabase online.
+[^1]: Supabase ayant besoin de .env pour fonctionner avec les étapes au-dessus, vous ne pourrez pas faire fonctionner notre supabase local. Cependant Paul Farault a été ajouté à notre supabase online.
 
 > *Rien ne sert de courir, il faut partir à point*.
