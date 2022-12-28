@@ -54,7 +54,7 @@
   *Les fichiers et dossiers sont placés comme il nous l'était demandé. 2 points*
 
 * Git   
-  *Nous avons un historique de commit riches, conventional commit a été utilisé tôt dans le projet, nous y sommes habitué. 2 points*
+  *Nous avons un historique de commit riches, conventional commit a été utilisé tôt dans le projet, nous y sommes habituées. 2 points*
 
 * Code quality   
   *La plupart de nos pages sont écrites avec qualité. Cependant certaine page, avec le plus de ligne, n'ont pas reçu le même taux de qualité. 2 points*
@@ -65,10 +65,10 @@
 **Application development:**
 
 * Home page   
-  *Cette page explique clairement le contenu et ce que doit faire l'utilisateur et nous avons rajouté des éléments en lien à notre sujet pour l'esthétisme. 2 points*
+  *Cette page explique clairement le contenu et ce que doit faire l'utilisateur et nous avons rajouté des éléments en lien à notre sujet pour l'esthétisme. Nous souhaitons tout de même améliorer son contenu afin que l'utilisateur dès l'accueil puisse voir des exemples de commentaires et de joueurs proposés. 2 points*
 
 * Login and profile page   
-  *Nous avons le bouton dans la navbar pour la connexion qui se transforme en un bouton avec le gravatar lorsque nous sommes connectés. De plus, lorsque l'utilisateur est connecté, il peut accéder à notre page profile contenant les informations de l'utilisateur. 4 points*
+  *Nous avons le bouton dans la navbar pour la connexion qui se transforme en un bouton avec le gravatar lorsque nous sommes connectés. De plus, lorsque l'utilisateur est connecté, il peut accéder à notre page profile contenant les informations de l'utilisateur. Cependant, nous n'avons pas réussi à trouver un moyen d'obtenir le pseudonyme d'un utilisateur inscrit par mail comparé à un utilisateur connecté via GitHub qui verra son pseudo affiché. 3 points*
 
 * New articles creation  
   *Lorsque l'utilisateur est connecté (est seulement quand il l'est), il peut ajouter de nouveaux joueurs dans la page "player" avec le bouton prévue. Le bouton nous redirige vers une autre page avec un formulaire. 6 points*
@@ -90,16 +90,16 @@
   *Si l'utilisateur connecté à créé le joueur qui est affiché alors celui-ci peut appuyer sur un bouton qui ne s'affiche que pour lui afin de supprimer le joueur. Dans notre table article dans supabase nous avons un attribut user_id qui est relié à l'utilisateur. Nous vérifions alors si l'user_id match l'id de l'utilisateur connecté. 2 points*
 
 * Comment modification   
-  *L'utilisateur qui a laissé un commentaire peut alors appuyer sur le bouton "modifier" en dessous de son commentaire. Cela affichera un module en haut de la page où il pourra modifier son commentaire. 2 points*
+  *L'utilisateur qui a laissé un commentaire peut alors appuyer sur le bouton "modifier" en dessous de son commentaire. Cela affichera un module en haut de la page où il pourra modifier son commentaire. Cependant, lorsque l'on souhaite modifier plusieurs commentaires, il arrive parfois que l'ID du commentaires soit faussé par l'ancienne sélection. Nous avons pas encore trouvé de moyen pour y remédier. 1,5 points*
 
 * Comment removal   
-  *Comme pour la modification un bouton que seul le créateur du commentaire peut voir lui permettra de supprimer celui-ci. 2 points*
+  *Comme pour la modification un bouton que seul le créateur du commentaire peut voir lui permettra de supprimer celui-ci. Comme pour la modification, nous avons rencontré le même problème que ci-dessus. 1,5 points*
 
 * Account settings   
   *Dans la page "profile" de l'utilisateur, un bouton en forme d'engrenage amène à une page de modification du profil. Dans celle-ci, si l'utilisateur est connecté grâce à GitHub, il verra un lien vers github. S'il est connecté avec un mail alors il aura la possibilité de changer son mot de passe ou son mail. Nous pouvons voir la modification du mail, mais celle-ci n'aura aucun réél effet. 4 points*
 
 * WYSIWYG integration   
-  *À faire. Ce point est à ajouter dans un futur proche afin d'améliorer notre site web. 0 points*
+  *À faire. Ce point est à ajouter dans un futur proche afin d'améliorer notre application web. 0 points*
 
 * Gravatar integration   
   *Lorsque l'utilisateur se connecte, celui-ci voit dans la navbar sont gravatar, pour les commentaires et réponse, ainsi que dans la page profile. 2 points*
